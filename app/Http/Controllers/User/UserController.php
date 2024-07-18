@@ -7,13 +7,8 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index() {
+    public function home()
+    {
         return view('index');
     }
-
-    public function userView() {
-        return view('users.user');
-    }
-
-
 }

@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class loginController extends Controller
 {
-    //
+    public function loginView() {
+        return view('login_register.login');
+    }
 }
