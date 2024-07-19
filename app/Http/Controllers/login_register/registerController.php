@@ -7,26 +7,26 @@ use Illuminate\Http\Request;
 
 class registerController extends Controller
 {
-    function registerView()
+    public function registerView()
     {
         return view('login_register.register');
     }
 
-    function registerView_1()
+    public function registerView_1()
     {
         return view('login_register.register_1');
     }
 
-    function registerView_2()
+    public function registerView_2()
     {
         return view('login_register.register_2');
     }
 
-    function modalView() {
+    public function modalView() {
         return view('login_register.modal');
     }
 
-    function codeView()
+    public function codeView()
     {
         return view('login_register.code');
     }

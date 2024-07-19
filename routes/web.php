@@ -12,4 +12,7 @@ Route::get('/register1', [registerController::class, 'registerView_1'])->name('r
 Route::get('/register_2', [registerController::class, 'registerView_2'])->name('registerView2');
 Route::get('/modal', [registerController::class, 'modalView'])->name('modalView');
 Route::get('/code', [registerController::class, 'codeView'])->name('codeView');
+Route::get('/passwordView', [loginController::class, 'passwordForgottenView'])->name('passView');
+Route::get('/modalVerif', [loginController::class, 'modalVerifView'])->name('modalVerifView');
+Route::get('/codeVerif', [loginController::class, 'codeVerifView'])->name('codeVerifView');
 

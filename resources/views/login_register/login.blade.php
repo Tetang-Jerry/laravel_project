@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="text-gray-400 text-xs flex flex-col gap-5 place-items-center">
-                        <a href="" class=" hover:text-gray-700 transition-all duration-300 ease-in-out">Mot de passe oublier?</a>
+                        <a href="{{route('passView')}}" class=" hover:text-gray-700 transition-all duration-300 ease-in-out">Mot de passe oublier?</a>
                         <a href="{{route('registerView')}}" class="underline hover:text-gray-700 transition-all duration-300 ease-in-out">Pas de compte? Inscrivez-vous</a>
                     </div>
                 </div>

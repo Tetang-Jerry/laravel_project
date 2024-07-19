@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <a href="{{route('modalView')}}" class="absolute top-0  flex place-items-center gap-1 pt-10 ml-5 text-center">
+    <a href="{{route('modalVerifView')}}" class="absolute top-0  flex place-items-center gap-1 pt-10 ml-5 text-center">
         <ion-icon name="arrow-back" class="text-xl"></ion-icon>
         <p>Back</p>
     </a>
@@ -37,21 +37,21 @@
         let resend = document.getElementById('renvoyez');
         let timeout = document.getElementById('timeout');
 
-        setTimeout(()=> {
+       setTimeout(()=> {
 
-            let  interval =  setInterval(()=> {
-                let newTime = parseInt(time.textContent);
+           let  interval =  setInterval(()=> {
+               let newTime = parseInt(time.textContent);
 
-                newTime -= 1;
-                time.textContent = newTime;
+               newTime -= 1;
+               time.textContent = newTime;
 
-                if (time.textContent == '0') {
-                    clearInterval(interval);
-                    resend.classList.remove('hidden');
-                    timeout.classList.add('hidden');
-                }
-            },1000)
-        }, 2000)
+               if (time.textContent == '0') {
+                   clearInterval(interval);
+                   resend.classList.remove('hidden');
+                   timeout.classList.add('hidden');
+               }
+           },1000)
+           }, 2000)
     </script>
 @endsection
 
