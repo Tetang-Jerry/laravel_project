@@ -59,8 +59,8 @@
                 your <span class="text-[#25626c]">finances</span>
             </p>
             <p>
-                <a href="#" class="px-4 py-2 rounded-full bg-[#25626c]">create account</a>
-                <a href="#" class="px-4 py-2 rounded-full bg-[#25626c]">check balance</a>
+                <a href="{{route('registerView')}}" class="px-4 py-2 rounded-full bg-[#25626c]">create account</a>
+                <a href="{{route('loginView')}}" class="px-4 py-2 rounded-full bg-[#25626c]">check balance</a>
             </p>
         </div>
         <div class="absolute grid justify-between  grid-cols-4 gap-10 bottom-[-70px] w-full right-0 px-40 text-black capitalize text-[12px] z-20 font-bold">
