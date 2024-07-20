@@ -1,0 +1,42 @@
+
+/* animation */
+
+.wallet,.savings{
+    animation: anim 2s linear infinite;
+}
+
+@keyframes anim {
+    0%,100%{
+        transform: translateY(10px);
+    }
+    50%{
+        transform: translateY(0);
+    }
+}
+
+.savings{
+    animation: anim 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes anim {
+    0%,100%{
+        transform: translateY(10px);
+    }
+    50%{
+        transform: translateY(0);
+    }
+}
+
+.load{
+    animation: load 5s linear;
+}
+
+@keyframes load {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 45%;
+    }
+}
