@@ -17,4 +17,7 @@ Route::get('/passwordView', [loginController::class, 'passwordForgottenView'])->
 Route::get('/modalVerif', [loginController::class, 'modalVerifView'])->name('modalVerifView');
 Route::get('/codeVerif', [loginController::class, 'codeVerifView'])->name('codeVerifView');
 Route::get('/dashboard', [DashboardController::class, 'dashboardView'])->name('dashboardView');
+Route::get('/retrait', [DashboardController::class, 'retraitView'])->name('retraitView');
+Route::get('/recharge', [DashboardController::class, 'rechargeView'])->name('rechargeView');
+Route::get('/transfert', [DashboardController::class, 'transfertView'])->name('transfertView');
 

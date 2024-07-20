@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>layout</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="{{asset('css/layout.css')}}">
+    <link rel="stylesheet" href="{{asset('css/anime.css')}}">
     @vite('resources/css/app.css')
     @yield('cssImport')
 </head>
-<body>
-        <!-- nav bar -->
+<body class="bg-backgrounddashboard "> 
+        <!-- header -->
 
-        <header class="relative mx-auto py-4 px-16 shadow-md">
+        <header class=" fixed w-full  mx-auto  py-3 px-16 shadow-md bg-white z-20 top-0  ">
         <!-- flex container  -->
             <div class="flex items-center justify-between ">
         <!--logo -->
@@ -49,43 +49,85 @@
 
 </header>
 
-  <!-- main -->
-<Main>
-      <div class="container">
-        @yield("container")
+
+<!-- container du sidebar et du main  -->
+
+
+<div class="relative flex mt-[66px] z-10">   
+
+      <!-- side bar -->
+
+ 
+<div class="sticky flex flex-col items-center bg-transparent py-[60px]  h-[calc(100vh-2rem)] w-full max-w-[24rem] px-6 ">
+  <div class=" p-4 flex space-x-[200px] mb-4">
+    <h5 class="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-primary ">Account</h5>
+    <h5 class=" font-bold text-3xl text-primary ">+</h5>
+  </div>
+
+    <!-- compte courant -->
+
+    <div class="flex flex-col w-[290px] bg-white h-[150px] bg rounded-lg shadow-xl mb-4 py-1 px-8">
+
+          <p class="font-bold text-2xl">
+          <span class="text-primary font-bold">$</span>
+          30000 
+            
+          </p>
+
+          <p class="font-bold text-primary mb-2">
+            Compte courant
+          </p>
+
+          <img src="images/wallet.png" alt="wallet" class="wallet w-[70px] place-self-end ">
+
+    </div>
+
+      <!-- compte epargne -->
+
+      <div class="flex flex-col w-[290px] bg-white h-[150px] bg rounded-lg shadow-xl mb-4 py-t px-8">
+
+      <p class="font-bold text-2xl">
+
+          <span class="text-primary font-bold ">$</span>
+          30000 
+            
+          </p>
+
+          <p class="font-bold text-primary">
+            Compte Epargne
+          </p>
+
+          <img src="images/savings.png" alt="wallet" class="w-[80px] savings place-self-end">
       </div>
+
+      <!-- balance status -->
+
+      <div class="flex items-center my-[20px] space-x-[20px] w-full justify-center cursor-pointer font-bold">
+        <i class="fa-regular fa-eye-slash text-primary"></i>
+        <p>Hide balance</p>
+      </div>
+</div>
+
+
+  
+
+
+  <!-- main -->
+
+<Main class=" flex border border-1 w-full">
+     
+@yield("contain")
+    
 </Main>
 
 
+</div>
+  
+
 <!-- footer -->
-<footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
-    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                <img src="/images/watermark_preview_image20240717-1-urrith-removebg-preview.png" class="w-24" alt="Flowbite Logo" />
-               
-            </a>
-            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">home</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">dashboard</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">service</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">History</a>
-                </li>
-                
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">help</a>
-                </li>
-                
-            </ul>
-        </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+<footer class="bg-white rounded-lg shadow dark:bg-gray-900 -z-10">
+    <div class="w-full max-w-screen-xl mx-auto  md:py-8">
+        
         <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#" class="hover:underline">ALPHA TRANSIT™</a>. All Rights Reserved.</span>
     </div>
 </footer>
