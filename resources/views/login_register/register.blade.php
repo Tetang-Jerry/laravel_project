@@ -91,7 +91,7 @@
                     <div class="cont flex gap-5 mt-5">
                         <button type="button" class="prev-button cursor-pointer flex justify-center text-primary text-center w-[60%] rounded-md mx-auto py-3 border border-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">Back</button>
 
-                        <button type="submit0" class="submit-button cursor-pointer flex justify-center text-primary text-center w-[60%] rounded-md mx-auto py-3 border border-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">Terminer</button>
+                        <button type="submit" class="submit-button cursor-pointer flex justify-center text-primary text-center w-[60%] rounded-md mx-auto py-3 border border-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">Terminer</button>
                     </div>
 
                     <div class="text-gray-400 text-xs flex flex-col gap-5 place-items-center">
