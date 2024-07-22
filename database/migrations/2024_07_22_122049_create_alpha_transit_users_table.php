@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('alpha_transit_user', function (Blueprint $table) {
+        Schema::create('alpha_transit_users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nom');
             $table->string('prenom');
