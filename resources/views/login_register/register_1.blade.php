@@ -25,7 +25,7 @@
 
                     <div class="flex-col flex  ">
                         <label for="password">Re-entrer le mot de passe</label>
-                        <input type="password" class="border border-gray-400 rounded-md py-3 px-3 focus:border focus:outline-none focus:border-gray-800">
+                        <input type="password" name="passwordVerify" class="border border-gray-400 rounded-md py-3 px-3 focus:border focus:outline-none focus:border-gray-800">
                     </div>
 
                     <div class="mt-5">

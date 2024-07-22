@@ -26,7 +26,7 @@
     <div class="md:flex justify-between hidden items-center">
         <div class="h-12 w-12"><img src="{{asset('images/watermark_preview_image20240717-1-urrith-removebg-preview.png')}}" class="h-full object-cover w-full"></div>
         <nav class="flex gap-4">
-            <a href="#" class="capitalize">Home</a>
+            <a href="" class="capitalize">Home</a>
             <a href="#" class="capitalize">about</a>
             <a href="#" class="capitalize">services</a>
             <a href="#" class="capitalize">pricing</a>
