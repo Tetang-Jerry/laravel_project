@@ -29,7 +29,7 @@
                     </div>
 
 
-                    <div class="flex gap-5">
+                    <div class="cont flex gap-5">
                         <button type="button" class="prev-button mt-5 cursor-pointer flex justify-center text-primary text-center w-[60%] rounded-md mx-auto py-3 border border-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">Prev</button>
 
                         <button type="button" class="next-button mt-5 cursor-pointer flex justify-center text-primary text-center w-[60%] rounded-md mx-auto py-3 border border-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">Next</button>
@@ -60,7 +60,7 @@
 
 
 
-                    <div class="flex gap-5">
+                    <div class="cont flex gap-5">
                         <button type="button" class="prev-button mt-5 cursor-pointer flex justify-center text-primary text-center w-[60%] rounded-md mx-auto py-3 border border-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">Prev</button>
 
                         <button type="button" class="next-button mt-5 cursor-pointer flex justify-center text-primary text-center w-[60%] rounded-md mx-auto py-3 border border-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">Next</button>
@@ -89,10 +89,10 @@
                         <input type="password" name="codeVerify" class="border border-gray-400 rounded-md py-3 px-3 focus:border focus:outline-none focus:border-gray-800">
                     </div>
 
-                    <div class="flex gap-5 mt-5">
+                    <div class="cont flex gap-5 mt-5">
                         <button type="button" class="prev-button cursor-pointer flex justify-center text-primary text-center w-[60%] rounded-md mx-auto py-3 border border-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">Back</button>
 
-                        <button type="button" class="submit-button cursor-pointer flex justify-center text-primary text-center w-[60%] rounded-md mx-auto py-3 border border-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">Terminer</button>
+                        <button type="submit" class="submit-button cursor-pointer flex justify-center text-primary text-center w-[60%] rounded-md mx-auto py-3 border border-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">Terminer</button>
                     </div>
 
                     <div class="text-gray-400 text-xs flex flex-col gap-5 place-items-center">
@@ -107,30 +107,36 @@
 @endsection
 
 @section('script')
-    <script>
-        const forms = document.querySelectorAll('.forms');
-        let currentFormIndex = 0;
 
-        window.onload = () => {
-            forms[currentFormIndex].classList.remove('hidden');
+ <script>
+     document.addEventListener("DOMContentLoaded", () => {
+         const forms = document.querySelectorAll('.forms');
+         let currentFormIndex = 0;
 
-            document.querySelectorAll(".next-button").forEach(button => {
-                button.addEventListener("click", () => navigateForms(1));
-            });
+         forms[currentFormIndex].classList.remove('hidden');
 
-            document.querySelectorAll(".prev-button").forEach(button => {
-                button.addEventListener("click", () => navigateForms(-1));
-            });
+         document.querySelectorAll(".next-button").forEach(button => {
+             button.addEventListener("click", () => {
+                 navigateForms(1, button);
+             });
+         });
 
-            document.querySelector(".submit-button").addEventListener("click", () => {
-                document.querySelector("form").submit();
-            });
-        }
+         document.querySelectorAll(".prev-button").forEach(button => {
+             button.addEventListener("click", () => {
+                 navigateForms(-1, button);
+             });
+         });
+     });
 
-        function navigateForms(direction) {
-            forms[currentFormIndex].classList.add('hidden');
-            currentFormIndex = (currentFormIndex + direction + forms.length) % forms.length;
-            forms[currentFormIndex].classList.remove('hidden');
-        }
-    </script>
+     function navigateForms(direction, button) {
+         const currentForm = button.closest('.forms');
+         currentForm.classList.add('hidden');
+
+         if (direction === 1) {
+             currentForm.nextElementSibling.classList.remove('hidden');
+         } else if (direction === -1) {
+             currentForm.previousElementSibling.classList.remove('hidden');
+         }
+     }
+ </script>
 @endsection
