@@ -43,5 +43,7 @@ class registerController extends Controller
            'numero' => $request->numero,
            'code' => $request->code,
        ]);
+
+       return redirect()->route('loginView');
     }
 }
