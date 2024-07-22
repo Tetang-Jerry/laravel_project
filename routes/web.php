@@ -17,4 +17,11 @@ Route::get('/passwordView', [loginController::class, 'passwordForgottenView'])->
 Route::get('/modalVerif', [loginController::class, 'modalVerifView'])->name('modalVerifView');
 Route::get('/codeVerif', [loginController::class, 'codeVerifView'])->name('codeVerifView');
 Route::get('/dashboard', [LayoutController::class, 'layoutdash'])->name('layoutdashView');
+// route::midlleware(['isadmin:admin'])->profil('app')->group('user', function(){
+//   route::get('/edit', [UserController::class, 'home'])->nam('home');
+//   route::middleware('user:user')->group('user', function(){
+//      route::get('/edit', [UserController::class, ''])->nam('edit');
+//   });
+// });
+
 
