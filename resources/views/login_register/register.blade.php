@@ -137,5 +137,23 @@
              currentForm.previousElementSibling.classList.remove('hidden');
          }
      }
+
+     function visible() {
+         let password = document.getElementById('password')
+         let  code = document.getElementById('code')
+
+
+         if (password.type === 'password') {
+             password.type = 'text';
+         }else if(password.type === 'text') {
+             password.type = 'password';
+         }
+
+         if (code.type === 'password') {
+             code.type = 'text';
+         }else if(code.type === 'text') {
+             code.type = 'password';
+         }
+     }
  </script>
 @endsection

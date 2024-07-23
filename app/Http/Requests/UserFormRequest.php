@@ -26,7 +26,7 @@ class UserFormRequest extends FormRequest
             'nom' => ['required', 'min:6'],
             'prenom' => ['required', 'min:6'],
             'username' => ['required', 'min:6', 'unique:alpha_transit_users,username'],
-            'email' => ['required', 'email', 'unique:alpha_transit_users,password'],
+            'email' => ['required', 'email', 'unique:alpha_transit_users,email'],
             'password' => ['required', 'min:8', 'unique:alpha_transit_users,password'],
             'passwordVerify' => ['required', 'same:password'],
             'numero'=>['required', 'digits:9', 'unique:alpha_transit_users,numero'],
