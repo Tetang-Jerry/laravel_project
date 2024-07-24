@@ -18,3 +18,5 @@ Route::get('/modalVerif', [loginController::class, 'modalVerifView'])->name('mod
 Route::get('/codeVerif', [loginController::class, 'codeVerifView'])->name('codeVerifView');
 Route::get('/dashboard', [LayoutController::class, 'layoutdash'])->name('layoutdashView');
 
+
+
