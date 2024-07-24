@@ -34,3 +34,5 @@ Route::get('/', [UserController::class, 'home'])->name('home');
         Route::get('/transfert', [DashboardController::class, 'transfertView'])->name('transfertView');
     });
 
+
+
