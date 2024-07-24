@@ -21,6 +21,7 @@ class UserFormRequest extends FormRequest
      */
     public function rules(): array
     {
+
         return [
             //
             'nom' => ['required', 'min:6'],

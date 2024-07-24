@@ -41,9 +41,8 @@ class registerController extends Controller
            'email' => $request->email,
            'password' => bcrypt($request->password),
            'numero' => $request->numero,
-           'code' => $request->code,
+           'code' => bcrypt($request->code),
        ]);
-
-       return redirect()->route('loginView');
+        return redirect()->route('loginView');
     }
 }
