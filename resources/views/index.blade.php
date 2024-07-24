@@ -27,6 +27,7 @@
         </div>
     </div>
     <hr />
+
     <div class="flex justify-between  items-center pb-1" id="scroll-home">
         <a href="{{Route('home')}}" ><div style="
             background-image: url('{{ asset('images/photo_2024-07-17_10-35-45-removebg-preview.png') }}');
@@ -41,6 +42,7 @@
             <a href="#" class=" md:hidden px-7 py-2  text-white w-full text-center bg-primary">
                 Apply now</a>        </nav>
         <a href="#" class="max-md:hidden px-7 py-2 rounded-full w-fit text-white bg-primary">
+
             Apply now</a>
         <p class="md:hidden w-7 h-5  bg-black" id="burger"></p>
     </div>
