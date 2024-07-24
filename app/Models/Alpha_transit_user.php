@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Alpha_transit_user extends Model
 {
     use HasFactory;
-    protected $table = 'alpha_transit_user';
 
+    protected $table = 'alpha_transit_users';
     protected $fillable = [
-        'nom', 'prenom', 'username', 'numero', 'code', 'email',
+      'nom', 'prenom', 'email', 'username', 'password', 'numero', 'code', 'passwordVerify', 'codeVerify',
     ];
 }
