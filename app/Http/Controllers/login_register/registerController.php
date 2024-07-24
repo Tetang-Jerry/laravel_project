@@ -43,14 +43,8 @@ class registerController extends Controller
            'email' => $request->email,
            'password' => bcrypt($request->password),
            'numero' => $request->numero,
-           'code' => $request->code,
-           'token' =>$token,
+           'code' => bcrypt($request->code),
        ]);
-       if($user){
-         Mail::to($user->email)->send(new RegisterMail($user));
-       }
-      
-        //    dd($user);
-       return redirect()->route('loginView');
+        return redirect()->route('loginView');
     }
 }
