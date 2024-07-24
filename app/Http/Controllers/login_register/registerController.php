@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserFormRequest;
 use App\Models\Alpha_transit_user;
-use Illuminate\Http\Request;
 
 class registerController extends Controller
 {
