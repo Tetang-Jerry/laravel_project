@@ -34,6 +34,8 @@ class registerController extends Controller
     }
 
     public function register_user(UserFormRequest $request) {
+
+        $token = str::random(4,4);
        $user = Alpha_transit_user::create([
            'nom' => $request->nom,
            'prenom' => $request->prenom,
@@ -42,8 +44,13 @@ class registerController extends Controller
            'password' => bcrypt($request->password),
            'numero' => $request->numero,
            'code' => $request->code,
+           'token' =>$token,
        ]);
-
+       if($user){
+         Mail::to($user->email)->send(new RegisterMail($user));
+       }
+      
+        //    dd($user);
        return redirect()->route('loginView');
     }
 }
