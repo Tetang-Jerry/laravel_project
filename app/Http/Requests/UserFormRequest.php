@@ -9,10 +9,13 @@ class UserFormRequest extends FormRequest
     /**
      * Determine if the user is authorized to make this request.
      */
-    public function authorize(): bool
+    public function authorize()
     {
-        return true;
+        return TRUE;
     }
+
+
+    
 
     /**
      * Get the validation rules that apply to the request.
