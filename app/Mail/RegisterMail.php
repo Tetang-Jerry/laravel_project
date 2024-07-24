@@ -12,13 +12,13 @@ use Illuminate\Queue\SerializesModels;
 class RegisterMail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $user;
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($info)
     {
-        //
+        $this->user = $info;
     }
 
     /**
@@ -27,7 +27,7 @@ class RegisterMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Register Mail',
+            subject: 'ALPHA TRANSIT',
         );
     }
 
