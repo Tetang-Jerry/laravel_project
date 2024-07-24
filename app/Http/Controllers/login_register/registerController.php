@@ -53,6 +53,6 @@ class registerController extends Controller
            Mail::to($user->email)->send(new RegisterMail($user));
 
        }
-        return redirect()->route('loginView');
+        return redirect()->route('codeView');
     }
 }
