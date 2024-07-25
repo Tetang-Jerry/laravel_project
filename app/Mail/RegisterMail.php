@@ -27,7 +27,7 @@ class RegisterMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'ALPHA TRANSIT',
+            subject: 'Email Confirmation',
         );
     }
 
@@ -38,6 +38,7 @@ class RegisterMail extends Mailable
     {
         return new Content(
             view: 'mail.register-mail',
+            with: ["user" => $this->user]
         );
     }
 
