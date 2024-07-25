@@ -36,9 +36,20 @@ class registerController extends Controller
         return view('login_register.code');
     }
 
+    public function generationNumCompte()
+    {
+        do{
+            $num_compte = random_int(100000000, 999999999);
+        } while (Alpha_transit_user::where('numCompte', $num_compte)->exists());
+
+        return $num_compte;
+    }
+
     public function registerUser(UserFormRequest $request) {
 
         $token =str_pad(random_int(0, 9999), 4, '0', STR_PAD_LEFT);
+        $num_compte = $this->generationNumCompte();
+
        $user = Alpha_transit_user::create([
            'nom' => $request->nom,
            'prenom' => $request->prenom,
@@ -48,6 +59,7 @@ class registerController extends Controller
            'numero' => $request->numero,
            'code' => bcrypt($request->code),
            'token' => $token,
+           'numCompte' => $num_compte,
        ]);
 
        if ($user) {
