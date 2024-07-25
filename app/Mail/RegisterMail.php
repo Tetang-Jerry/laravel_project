@@ -38,6 +38,7 @@ class RegisterMail extends Mailable
     {
         return new Content(
             view: 'mail.register-mail',
+            with: ["user" => $this->user]
         );
     }
 
