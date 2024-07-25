@@ -36,7 +36,7 @@ class registerController extends Controller
         return view('login_register.code');
     }
 
-    public function generationNumCompte()
+    public function generationNumCompte(): int
     {
         do{
             $num_compte = random_int(100000000, 999999999);

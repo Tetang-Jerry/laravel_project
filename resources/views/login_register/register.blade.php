@@ -108,9 +108,9 @@
                         <a href="{{route('loginView')}}" class=" hover:text-gray-700 transition-all duration-300 ease-in-out">Vous avez déjà un compte? connectez-vous</a>
                     </div>
                 </div>
-                <div id="form4" class="hidden mt-[-200px] forms">
+                <div id="form4" class="hidden forms mt-5 flex flex-col gap-8">
 
-                    <div class="relative w-fit mx-auto bg-white rounded-lg  shadow-xl pb-4 shadow-gray-400 mt-[200px]">
+                    <div class="relative w-fit mx-auto">
                         <button type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal">
 
                             <span class="sr-only">Close modal</span>
