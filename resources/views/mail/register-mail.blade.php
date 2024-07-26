@@ -50,19 +50,11 @@
     </style>
 </head>
 <body>
-<<<<<<< HEAD
-    <div class="email-container">
-      <div class="email-header">
-        <img src="/images/watermark_preview_image20240717-1-urrith-removebg-preview.png" alt="Logo de l'entreprise" class="w-[100px] h-[40px]">
-      </div>
-      <div class="email-body">
-=======
 <div class="email-container">
     <div class="email-header">
         <img src="{{$message->embed(public_path().'/images/watermark_preview_image20240717-1-urrith-removebg-preview.png')}}" alt="Logo de l'entreprise" class="w-[100px] h-[40px]">
     </div>
     <div class="email-body">
->>>>>>> f2c6c0af08e8e8d561e1df140914aeafb1de0a55
         <h1 class="text-2xl font-bold text-gray-800">Vérification de votre adresse email</h1>
         <p class="text-gray-600">Bonjour {{$user->nom}}</p>
         <p class="text-gray-600">Merci de vous être inscrit chez nous. Pour compléter votre inscription, veuillez utiliser le code OTP ci-dessous pour vérifier votre adresse email.</p>
