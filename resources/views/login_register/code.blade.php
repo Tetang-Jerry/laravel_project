@@ -17,7 +17,7 @@
             </div>
 
             <div class="mt-10">
-                <a href=""  class="cursor-pointer flex justify-center  text-primary text-center  w-[60%] rounded-md mx-auto py-3 border border-primary
+                <a href="{{route('loginView')}}"  class="cursor-pointer flex justify-center  text-primary text-center  w-[60%] rounded-md mx-auto py-3 border border-primary
                            hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">Confirmer</a>
             </div>
 
