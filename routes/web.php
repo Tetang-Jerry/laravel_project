@@ -29,6 +29,8 @@ Route::middleware('auth:sanctum')->get('/dashboard', function () {
         Route::get('/passwordView', [loginController::class, 'passwordForgottenView'])->name('passView');
         Route::get('/modalVerif', [loginController::class, 'modalVerifView'])->name('modalVerifView');
         Route::get('/codeVerif', [loginController::class, 'codeVerifView'])->name('codeVerifView');
+        Route::post('/loginUser', [loginController::class, 'loginUser'])->name('loginUser');
+        Route::get('/logout', [loginController::class, 'logoutUser'])->name('logoutUser');
     });
 
 

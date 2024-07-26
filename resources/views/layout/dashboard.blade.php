@@ -78,7 +78,7 @@
             Compte courant
           </p>
 
-          <img src="images/wallet.png" alt="wallet" class="wallet w-[70px] place-self-end ">
+          <img src="/images/wallet.png" alt="wallet" class="wallet w-[70px] place-self-end ">
 
     </div>
 
@@ -97,7 +97,7 @@
             Compte Epargne
           </p>
 
-          <img src="images/savings.png" alt="wallet" class="w-[80px] savings place-self-end">
+          <img src="/images/savings.png" alt="wallet" class="w-[80px] savings place-self-end">
       </div>
 
       <!-- balance status -->
