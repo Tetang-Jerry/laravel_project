@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('alpha_transit_users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('numCompte')->unique();
             $table->string('nom');
             $table->string('prenom');
             $table->string('username');
@@ -21,7 +20,6 @@ return new class extends Migration
             $table->string('password');
             $table->string('numero');
             $table->string('code');
-            $table->string('token');
             $table->timestamps();
         });
     }

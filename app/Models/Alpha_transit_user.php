@@ -11,6 +11,10 @@ class Alpha_transit_user extends Model
 
     protected $table = 'alpha_transit_users';
     protected $fillable = [
-      'nom', 'prenom', 'email', 'username', 'password', 'numero', 'code', 'passwordVerify', 'codeVerify', 'token', 'numCompte'
+      'nom', 'prenom', 'email', 'username', 'password', 'numero', 'code', 'passwordVerify', 'codeVerify',
     ];
+
+    public static function findOrFail($id)
+    {
+    }
 }

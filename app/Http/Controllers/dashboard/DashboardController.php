@@ -22,8 +22,4 @@ class DashboardController extends Controller
     public function rechargeView(){
         return view('dashboard.recharge');
     }
-
-    public function MailView(){
-        return view('Mail.register-mail');
-    }
 }
