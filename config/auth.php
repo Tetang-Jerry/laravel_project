@@ -47,10 +47,6 @@ return [
         "provider" => 'user_auth'
        ]
 
-        'user_auth' => [
-            'driver' => 'session',
-            'provider' => 'user_auth',
-        ]
     ],
 
     /*

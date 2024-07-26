@@ -45,10 +45,10 @@ class loginController extends Controller
         }
         return redirect()->route('login');
     }
-}
+
 
    
-    }
+    
 
     public function loginUser(LoginFormRequest $request)
     {
@@ -59,15 +59,6 @@ class loginController extends Controller
         }else {
             return redirect()->route('loginView')->with('error', 'Email ou mot de passe incorrect');
         }
-    }
-
-    public function logoutUser()
-    {
-        if (Auth::guard('user_auth')->check()) {
-            Auth::guard('user_auth')->logout();
-
-        }
-        return redirect()->route('loginView');
     }
 }
 
