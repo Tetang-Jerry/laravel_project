@@ -18,3 +18,9 @@ Route::get('/modalVerif', [loginController::class, 'modalVerifView'])->name('mod
 Route::get('/codeVerif', [loginController::class, 'codeVerifView'])->name('codeVerifView');
 Route::get('/dashboard', [LayoutController::class, 'layoutdash'])->name('layoutdashView');
 
+// Route::middleware(['isadmin:admin'])->prefix('app')->group('user', function(){
+//     Route::get('/user', [UserController::class, 'home'])->name('home');
+//     Route::middleware('user::user')->group('user', function(){
+//         Route::get('/edit', [UserController::class, ''])->name('home');
+//     });
+// });
