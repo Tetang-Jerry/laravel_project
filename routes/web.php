@@ -13,7 +13,7 @@ Route::get('/', [UserController::class, 'home'])->name('home');
     Route::prefix('register')->group( function () {
         Route::get('/register', [registerController::class, 'registerView'])->name('registerView');
         Route::get('/register1', [registerController::class, 'registerView_1'])->name('registerView1');
-        Route::post('store_user',[registerController::class,'register_user'])->name('store_user');
+        Route::post('store_user',[registerController::class,'registerUser'])->name('registerUser');
         Route::get('/register_2', [registerController::class, 'registerView_2'])->name('registerView2');
         Route::get('/modal', [registerController::class, 'modalView'])->name('modalView');
         Route::get('/code', [registerController::class, 'codeView'])->name('codeView');
