@@ -32,6 +32,9 @@
                     </div>
                 </div>
             </form>
+            @if(session::has('error'))
+            <div>{{session::get('error')}}</div>
+            @endif
         </div>
 
 

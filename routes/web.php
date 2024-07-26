@@ -25,6 +25,7 @@ Route::get('/', [UserController::class, 'home'])->name('home');
         Route::get('/passwordView', [loginController::class, 'passwordForgottenView'])->name('passView');
         Route::get('/modalVerif', [loginController::class, 'modalVerifView'])->name('modalVerifView');
         Route::get('/codeVerif', [loginController::class, 'codeVerifView'])->name('codeVerifView');
+        Route::get('/loginUser', [loginController::class, 'loginUser'])->name('loginUser');
     });
 
     Route::get('/Mail', [DashboardController::class, 'MailView'])->name('Mailview');
