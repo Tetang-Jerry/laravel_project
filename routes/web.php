@@ -24,6 +24,7 @@ Route::prefix('register')->group(function () {
     Route::get('/mail', [registerController::class, 'valider'])->name('valider');
 });
 
+Route::get('/Mail', [registerController::class, 'Boutton']);
 
 Route::prefix('login')->group(function () {
     Route::get('/login', [loginController::class, 'loginView'])->name('loginView');
