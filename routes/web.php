@@ -35,7 +35,7 @@ Route::middleware('auth:sanctum')->get('/dashboard', function () {
 
 
     Route::prefix('dashboard')->group( function () {
-        Route::get('/dashboard', [DashboardController::class, 'dashboardView'])->name('dashboardView');
+        Route::get('/', [DashboardController::class, 'dashboardView'])->name('dashboardView');
         Route::get('/retrait', [DashboardController::class, 'retraitView'])->name('retraitView');
         Route::get('/recharge', [DashboardController::class, 'rechargeView'])->name('rechargeView');
         Route::get('/transfert', [DashboardController::class, 'transfertView'])->name('transfertView');

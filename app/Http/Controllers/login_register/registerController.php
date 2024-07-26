@@ -48,7 +48,7 @@ class registerController extends Controller
 
     public function registerUser(UserFormRequest $request) {
         try {
-            DB::transaction(function () use ($request) {
+            DB::transaction(function() use ($request) {
                 $token =str_pad(random_int(0, 9999), 4, '0', STR_PAD_LEFT);
                 $num_compte = $this->generationNumCompte();
 

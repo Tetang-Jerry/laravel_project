@@ -54,7 +54,7 @@
                             </li>
                         </ul>
                         <div class="py-2">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                            <a href="{{route('logoutUser')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
                         </div>
                     </div>
 
@@ -77,9 +77,10 @@
 
             <!-- compte courant -->
             <div class="flex flex-col w-[290px] bg-white h-[150px] bg rounded-lg shadow-xl mb-4 py-1 px-8">
-                <p class="font-bold text-2xl">
-                    <span class="text-primary font-bold">$</span>
-                    30000
+                <p class="font-bold text-2xl flex justify-between">
+                    <span class="text-primary font-bold" >$<span class="text-primary font-bold" id="balance">15000</span></span>
+                   
+                    <i class="fa-regular fa-eye-slash text-primary mt-2" id="toggleBalance"></i>
                 </p>
                 <p class="font-bold text-primary mb-2">
                     Compte courant
@@ -89,9 +90,11 @@
 
             <!-- compte epargne -->
             <div class="flex flex-col w-[290px] bg-white h-[150px] bg rounded-lg shadow-xl mb-4 py-t px-8">
-                <p class="font-bold text-2xl">
-                    <span class="text-primary font-bold">$</span>
-                    30000
+                <p class="font-bold text-2xl flex justify-between">
+                    <span class="text-primary font-bold">$<span class="text-primary font-bold" id="balance2">30000</span></span>
+                    
+
+                    <i class="fa-regular fa-eye-slash text-primary mt-2" id="toggleBalance2"></i>
                 </p>
                 <p class="font-bold text-primary">
                     Compte Epargne
@@ -100,10 +103,7 @@
             </div>
 
             <!-- balance status -->
-            <div class="flex items-center my-[20px] space-x-[20px] w-full justify-center cursor-pointer font-bold">
-                <i class="fa-regular fa-eye-slash text-primary"></i>
-                <p>Hide balance</p>
-            </div>
+           
         </div>
 
         <!-- main -->
@@ -119,6 +119,10 @@
             <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#" class="hover:underline">ALPHA TRANSIT™</a>. All Rights Reserved.</span>
         </div>
     </footer>
+
+    <script src="{{ asset('js/hidebalance.js') }}">
+   
+    </script>
 
 </body>
 
