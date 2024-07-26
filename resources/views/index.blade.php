@@ -30,7 +30,7 @@
     <div class="flex justify-between  items-center pb-1" id="scroll-home">
         <a href="{{Route('home')}}" ><div style="
             background-image: url('{{ asset('images/photo_2024-07-17_10-35-45-removebg-preview.png') }}');
-            background-size: cover;
+            backgroun   d-size: cover;
           " class="h-12 w-12"></div></a>
         <nav id="burger_nav" class="flex md:gap-4 ease-in duration-600 transition-all top-full max-md:absolute max-md:hidden  max-md:flex-col max-md:w-full max-md:bg-white max-lg:right-0">
             <a href="#" class="capitalize max-md:hover:bg-primary max-md:hover:text-white max-md:px-5 max-md:py-2 text-center">Home</a>
