@@ -21,7 +21,7 @@ Route::prefix('register')->group(function () {
     Route::get('/register_2', [registerController::class, 'registerView_2'])->name('registerView2');
     Route::get('/modal', [registerController::class, 'modalView'])->name('modalView');
     Route::get('/code', [registerController::class, 'codeView'])->name('codeView');
-    Route::get('/code', [registerController::class, 'valider'])->name('valider');
+    Route::get('/mail', [registerController::class, 'valider'])->name('valider');
 });
 
 
