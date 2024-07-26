@@ -10,7 +10,7 @@
 <body>
     <div class="email-container">
       <div class="email-header">
-        <img src="/images/watermark_preview_image20240717-1-urrith-removebg-preview.png" alt="Logo de l'entreprise" class="w-[100px] h-[40px]">
+        <img src=" {{$m}}/images/watermark_preview_image20240717-1-urrith-removebg-preview.png" alt="Logo de l'entreprise" class="w-[100px] h-[40px]">
       </div>
       <div class="email-body">
         <h1 class="text-2xl font-bold text-gray-800">Vérification de votre adresse email</h1>
