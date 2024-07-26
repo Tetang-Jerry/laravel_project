@@ -42,6 +42,12 @@ class registerController extends Controller
     {
         return view('login_register.code');
     }
+    
+
+    public function boutton()
+    {
+        return view('mail.register-mail');
+    }
 
 
     public function generationNumCompte(): int
