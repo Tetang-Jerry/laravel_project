@@ -16,6 +16,7 @@ Route::get('/', [UserController::class, 'home'])->name('home');
         Route::get('/modal', [registerController::class, 'modalView'])->name('modalView');
         Route::get('/code', [registerController::class, 'codeView'])->name('codeView');
         Route::post('/registerUser', [registerController::class, 'registerUser'])->name('registerUser');
+        Route::post('/registerUser', [registerController::class, 'registerUser'])->name('registerUser');
     });
 
 
