@@ -29,7 +29,7 @@ class RegisterMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'ALPHA TRANSIT',
+            subject: 'Email Confirmation',
         );
     }
 
@@ -39,7 +39,7 @@ class RegisterMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'mail.register-mail.php',
         );
     }
 
