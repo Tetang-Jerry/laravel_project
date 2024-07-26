@@ -5,10 +5,10 @@
 <!-- bloc1 de ma flexbox -->
 
 <div class=" w-1/2 p-6">
-        
+
 
 <!-- search bar -->
-<form class="max-w-lg mx-auto">   
+<form class="max-w-lg mx-auto">
     <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
     <div class="relative">
         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -36,7 +36,7 @@
             Retrait
          </p>
 
-         <img src="images/withdrawal.png" alt="wallet" class="w-[70px] place-self-end ">
+         <img src="/images/withdrawal.png" alt="wallet" class="w-[70px] place-self-end ">
          .
     </a>
 
@@ -46,7 +46,7 @@
             Recharge
     </p>
 
-    <img src="images/deposit.png" alt="wallet" class="w-[70px] place-self-end wallet">
+    <img src="/images/deposit.png" alt="wallet" class="w-[70px] place-self-end wallet">
 
     </a>
     <a href="{{route('transfertView')}}" class=" flex flex-col h-[120px] w-[260px] bg-white shadow-xl border rounded-xl hover:bg-hoverdashboard p-4">
@@ -55,12 +55,12 @@
             Transfert
          </p>
 
-         <img src="images/transfer.png" alt="wallet" class="w-[70px] place-self-end ">
+         <img src="/images/transfer.png" alt="wallet" class="w-[70px] place-self-end ">
 
     </a>
 
     <div class="bg-white rounded-xl shadow-lg h-[160px] w-260px] mr-4 p-4">
-           
+
             <div class="flex justify-between m-0">
                 <p>Transfers to people</p>
                 <p class=" text-customBlue text-[20px]">july</p>
@@ -72,7 +72,7 @@
                 <p>$45000</p>
                 <p>$100000</p>
             </div>
-            
+
         <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-3">
          <div class="bg-primary h-2.5 rounded-full load w-[45%]"></div>
         </div>
@@ -99,7 +99,7 @@ set up  two-factor authentification the <br>when withdrawing money
       </div>
 
 
-       
+
       <!-- bloc2 de ma flexbox -->
 
       <div class=" w-1/2 p-6 flex flex-col justify-center items-center">
@@ -109,7 +109,7 @@ set up  two-factor authentification the <br>when withdrawing money
 <div class=" relative flex justify-end w-full pr-[10px]  h-[100px] mb-5">
    <a href="#">
    <img src="/images/assistance.jpg" alt="assistance" class="w-[160px] h-full rounded-lg">
-  
+
   <p class="absolute right-6 top-1 text-white font-bold text-lg">litiges</p>
    </a>
 </div>
@@ -220,7 +220,7 @@ set up  two-factor authentification the <br>when withdrawing money
    </div>
    <button class="font-bold bg-primary w-full text-white p-2 rounded-lg shadow-lg">All operations</button>
 </div>
-       
+
        </div>
 
 @endsection

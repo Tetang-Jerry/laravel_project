@@ -1,0 +1,410 @@
+* {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+}
+
+/* DEBUT DU MENU------------------------------- */
+
+.menu-dashboard {
+    width: 20%;
+    background-color: pink;
+    min-height: 100vh;
+    padding: 10px;
+}
+.menu-dashboard .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 20px 10px;
+}
+.menu-dashboard .brand img {
+    height: 5vw;
+}
+.menu-dashboard .brand h1 {
+    color: rgb(38, 0, 255);
+    width: 100%;
+}
+.menu-dashboard .brand h1 span {
+    color: rgb(255, 0, 34);
+    font-style: italic;
+    font-size: 95%;
+}
+/* .menu-dashboard .nav {
+  padding: 40px 0;
+} */
+.menu-dashboard .nav a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
+    margin: 20px 0;
+    font-size: 120%;
+    padding: 10px 5px;
+    transition: 0.5s ease-in-out;
+}
+.menu-dashboard .nav a:hover {
+    color: blue;
+    background-color: #fff;
+    border-radius: 15px;
+}
+.menu-dashboard .nav a img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 5px;
+    border: 1px solid black;
+}
+.menu-dashboard .nav a li {
+    list-style: none;
+    font-weight: bolder;
+    text-transform: capitalize;
+    /* display: none; */
+}
+/* DEBUT DU DASHBOARD--------------------- */
+.dashboard {
+    min-width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.dashboard .header {
+    height: 15vh;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.116);
+}
+.dashboard .header .search {
+    position: relative;
+    width: 50%;
+    margin: 0 20%;
+}
+.dashboard .header .search input {
+    width: 100%;
+    height: 100%;
+    padding: 15px 10px;
+    outline: none;
+    border: none;
+    background-color: rgba(221, 220, 220, 0.123);
+}
+.dashboard .header .search input::placeholder {
+    font-size: 130%;
+}
+.dashboard .header .search img {
+    position: absolute;
+    cursor: pointer;
+    height: 100%;
+    width: 30px;
+    right: 2%;
+}
+.profile {
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: space-between;
+}
+.profile a:nth-child(1),
+.btn {
+    text-decoration: none;
+    background-color: rgb(255, 47, 82);
+    color: #fff;
+    text-transform: capitalize;
+    height: fit-content;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 10px;
+}
+.profile a:nth-child(1):hover,
+.btn:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.432);
+    transform: scale(1.01);
+}
+.profile a:nth-child(2) img,
+.noti {
+    width: 20px;
+}
+.profile a:nth-child(3) img,
+.img {
+    width: 45px;
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid rgb(248, 97, 122);
+    background-color: aqua;
+}
+.dashboard .body .cards {
+    display: grid;
+    margin-right: 50px;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.dashboard .body .cards .card {
+    background-color: #fff;
+    margin: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.116);
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s ease-in;
+    width: 100%;
+    padding: 36px 20px;
+}
+.dashboard .body .cards .card:hover {
+    transform: scale(1.04);
+}
+.dashboard .body .cards .card h3 {
+    color: gray;
+    text-transform: capitalize;
+}
+.dashboard .body .cards .card img {
+    width: 45px;
+    height: 45px;
+}
+.payment {
+    display: flex;
+    gap: 30px;
+}
+
+.payment-place {
+    width: 100%;
+    background-color: #fff;
+    margin: 0 25px;
+    transition: 0.5s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.116);
+}
+.payment-place:hover {
+    transform: scale(1.03);
+}
+.titlle {
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    padding: 20px 15%;
+    width: 100%;
+}
+.payment table {
+    width: 100%;
+    padding: 20px;
+}
+
+.payment table td {
+    padding: 6px 10px;
+}
+.new-student {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.116);
+    width: 38%;
+    margin-right: 25px;
+}
+* {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+}
+
+/* DEBUT DU MENU------------------------------- */
+
+.menu-dashboard {
+    width: 20%;
+    background-color: pink;
+    min-height: 100vh;
+    padding: 10px;
+}
+.menu-dashboard .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 20px 10px;
+}
+.menu-dashboard .brand img {
+    height: 5vw;
+}
+.menu-dashboard .brand h1 {
+    color: rgb(38, 0, 255);
+    width: 100%;
+}
+.menu-dashboard .brand h1 span {
+    color: rgb(255, 0, 34);
+    font-style: italic;
+    font-size: 95%;
+}
+/* .menu-dashboard .nav {
+  padding: 40px 0;
+} */
+.menu-dashboard .nav a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
+    margin: 20px 0;
+    font-size: 120%;
+    padding: 10px 5px;
+    transition: 0.5s ease-in-out;
+}
+.menu-dashboard .nav a:hover {
+    color: blue;
+    background-color: #fff;
+    border-radius: 15px;
+}
+.menu-dashboard .nav a img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 5px;
+    border: 1px solid black;
+}
+.menu-dashboard .nav a li {
+    list-style: none;
+    font-weight: bolder;
+    text-transform: capitalize;
+    /* display: none; */
+}
+/* DEBUT DU DASHBOARD--------------------- */
+.dashboard {
+    min-width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.dashboard .header {
+    height: 15vh;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.116);
+}
+.dashboard .header .search {
+    position: relative;
+    width: 50%;
+    margin: 0 20%;
+}
+.dashboard .header .search input {
+    width: 100%;
+    height: 100%;
+    padding: 15px 10px;
+    outline: none;
+    border: none;
+    background-color: rgba(221, 220, 220, 0.123);
+}
+.dashboard .header .search input::placeholder {
+    font-size: 130%;
+}
+.dashboard .header .search img {
+    position: absolute;
+    cursor: pointer;
+    height: 100%;
+    width: 30px;
+    right: 2%;
+}
+.profile {
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: space-between;
+}
+.profile a:nth-child(1),
+.btn {
+    text-decoration: none;
+    background-color: rgb(255, 47, 82);
+    color: #fff;
+    text-transform: capitalize;
+    height: fit-content;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 10px;
+}
+.profile a:nth-child(1):hover,
+.btn:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.432);
+    transform: scale(1.01);
+}
+.profile a:nth-child(2) img,
+.noti {
+    width: 20px;
+}
+.profile a:nth-child(3) img,
+.img {
+    width: 45px;
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid rgb(248, 97, 122);
+    background-color: aqua;
+}
+.dashboard .body .cards {
+    display: grid;
+    margin-right: 50px;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.dashboard .body .cards .card {
+    background-color: #fff;
+    margin: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.116);
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s ease-in;
+    width: 100%;
+    padding: 36px 20px;
+}
+.dashboard .body .cards .card:hover {
+    transform: scale(1.04);
+}
+.dashboard .body .cards .card h3 {
+    color: gray;
+    text-transform: capitalize;
+}
+.dashboard .body .cards .card img {
+    width: 45px;
+    height: 45px;
+}
+.payment {
+    display: flex;
+    gap: 30px;
+}
+
+.payment-place {
+    width: 62%;
+    background-color: #fff;
+    margin: 0 25px;
+    transition: 0.5s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.116);
+}
+.payment-place:hover {
+    transform: scale(1.03);
+}
+.titlle {
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    padding: 20px 15%;
+    width: 100%;
+}
+.payment table {
+    width: 100%;
+    padding: 20px;
+}
+
+.payment table td {
+    padding: 6px 10px;
+}
+.new-student {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.116);
+    width: 38%;
+    margin-right: 25px;
+}

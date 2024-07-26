@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Alpha_transit_user;
+
 return [
 
     /*
@@ -44,6 +46,11 @@ return [
         "'driver'" => 'session',
         "provider" => 'user_auth'
        ]
+
+        'user_auth' => [
+            'driver' => 'session',
+            'provider' => 'user_auth',
+        ]
     ],
 
     /*
@@ -68,10 +75,12 @@ return [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
-        "user_auth" =>[
+
+
+        'user_auth' => [
             'driver' => 'eloquent',
-            'model' => Alpha_transit_user::class 
-        ],
+            'model' =>  Alpha_transit_user::class
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

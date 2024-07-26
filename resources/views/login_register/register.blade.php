@@ -109,9 +109,9 @@
                         <a href="{{route('loginView')}}" class=" hover:text-gray-700 transition-all duration-300 ease-in-out">Vous avez déjà un compte? connectez-vous</a>
                     </div>
                 </div>
-                <div id="form4" class="hidden mt-[-200px] forms">
+                <div id="form4" class="hidden forms mt-5 flex flex-col gap-8">
 
-                    <div class="relative w-fit mx-auto bg-white rounded-lg  shadow-xl pb-4 shadow-gray-400 mt-[200px]">
+                    <div class="relative w-fit mx-auto">
                         <button type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal">
 
                             <span class="sr-only">Close modal</span>
@@ -137,61 +137,61 @@
 
 @section('script')
 
- <script>
-     document.addEventListener("DOMContentLoaded", () => {
-         const forms = document.querySelectorAll('.forms');
-         let currentFormIndex = 0;
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const forms = document.querySelectorAll('.forms');
+            let currentFormIndex = 0;
 
-         forms[currentFormIndex].classList.remove('hidden');
+            forms[currentFormIndex].classList.remove('hidden');
 
-         document.querySelectorAll(".next-button").forEach(button => {
-             button.addEventListener("click", () => {
-                 navigateForms(1, button);
-             });
-         });
+            document.querySelectorAll(".next-button").forEach(button => {
+                button.addEventListener("click", () => {
+                    navigateForms(1, button);
+                });
+            });
 
-         document.querySelectorAll(".prev-button").forEach(button => {
-             button.addEventListener("click", () => {
-                 navigateForms(-1, button);
-             });
-         });
-     });
+            document.querySelectorAll(".prev-button").forEach(button => {
+                button.addEventListener("click", () => {
+                    navigateForms(-1, button);
+                });
+            });
+        });
 
-     function navigateForms(direction, button) {
-         const currentForm = button.closest('.forms');
-         currentForm.classList.add('hidden');
+        function navigateForms(direction, button) {
+            const currentForm = button.closest('.forms');
+            currentForm.classList.add('hidden');
 
-         if (direction === 1) {
-             currentForm.nextElementSibling.classList.remove('hidden');
-         } else if (direction === -1) {
-             currentForm.previousElementSibling.classList.remove('hidden');
-         }
-     }
+            if (direction === 1) {
+                currentForm.nextElementSibling.classList.remove('hidden');
+            } else if (direction === -1) {
+                currentForm.previousElementSibling.classList.remove('hidden');
+            }
+        }
 
-     function visible() {
-         let password = document.getElementById('password')
-         let  code = document.getElementById('code')
+        function visible() {
+            let password = document.getElementById('password')
+            let  code = document.getElementById('code')
 
 
-         if (password.type === 'password') {
-             password.type = 'text';
-         }else if(password.type === 'text') {
-             password.type = 'password';
-         }
+            if (password.type === 'password') {
+                password.type = 'text';
+            }else if(password.type === 'text') {
+                password.type = 'password';
+            }
 
-         if (code.type === 'password') {
-             code.type = 'text';
-         }else if(code.type === 'text') {
-             code.type = 'password';
-         }
-     }
+            if (code.type === 'password') {
+                code.type = 'text';
+            }else if(code.type === 'text') {
+                code.type = 'password';
+            }
+        }
 
-     function emailCopy() {
-         let email = document.getElementById('email').value
+        function emailCopy() {
+            let email = document.getElementById('email').value
 
-         let emailcopy = document.querySelector('.emailCont')
+            let emailcopy = document.querySelector('.emailCont')
 
-         emailcopy.innerText = email;
-     }
- </script>
+            emailcopy.innerText = email;
+        }
+    </script>
 @endsection
