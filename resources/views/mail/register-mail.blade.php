@@ -37,6 +37,17 @@
             padding: 20px;
         }
 
+        .btn .btn-mail {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+
         .email-footer {
             padding: 20px;
             text-align: center;
@@ -71,11 +82,8 @@
                 {{-- {{ $user->token }} --}}
             </div>
 
-            <div>
-                <a href="{{ route('valider') }}"
-                    class=" text-white bg-green-600 hover:bg-green-800
-            focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg
-            text-sm inline-flex items-center px-5 py-2.5 text-center">Valider</a>
+            <div class="btn">
+                <a href="{{ route('valider') }}" class="btn-mail">Valider</a>
             </div>
 
             <p class="text-gray-600">Si vous n'avez pas demandé cette vérification, veuillez ignorer cet email.</p>
