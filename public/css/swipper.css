@@ -1,0 +1,23 @@
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+.slider-slide {
+    flex: 0 0 100%;
+}
+
+@media (min-width: 280px) {
+    .slider-slide {
+        flex: 0 0 100%;
+    }
+}
+@media (min-width: 640px) {
+    .slider-slide {
+        flex: 0 0 50%;
+    }
+}
+@media (min-width: 1024px) {
+    .slider-slide {
+        flex: 0 0 33.3333%;
+    }
+}

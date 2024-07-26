@@ -23,15 +23,14 @@
         </div>
         <div class="flex gap-2">
             <p>+1-800-356-6745</p>
-            <p><a href="{{route('registerView')}}">SignUp</a>/<a href="#">Login</a></p>
+            <p><a href="{{route('registerView')}}"  class="hover:text-primary">SignUp</a> | <a href="{{route('loginView')}}" class="hover:text-primary">Login</a></p>
         </div>
     </div>
     <hr />
-
     <div class="flex justify-between  items-center pb-1" id="scroll-home">
         <a href="{{Route('home')}}" ><div style="
             background-image: url('{{ asset('images/photo_2024-07-17_10-35-45-removebg-preview.png') }}');
-            background-size: cover;
+            backgroun   d-size: cover;
           " class="h-12 w-12"></div></a>
         <nav id="burger_nav" class="flex md:gap-4 ease-in duration-600 transition-all top-full max-md:absolute max-md:hidden  max-md:flex-col max-md:w-full max-md:bg-white max-lg:right-0">
             <a href="#" class="capitalize max-md:hover:bg-primary max-md:hover:text-white max-md:px-5 max-md:py-2 text-center">Home</a>
@@ -39,10 +38,9 @@
             <a href="#" class="capitalize max-md:hover:bg-primary max-md:hover:text-white max-md:px-5 max-md:py-2 text-center">services</a>
             <a href="#" class="capitalize max-md:hover:bg-primary max-md:hover:text-white max-md:px-5 max-md:py-2 text-center">pricing</a>
             <a href="#" class="capitalize max-md:hover:bg-primary max-md:hover:text-white max-md:px-5 max-md:py-2 text-center">contact</a>
-            <a href="#" class=" md:hidden px-7 py-2  text-white w-full text-center bg-primary">
+            <a href="{{route('loginView')}}" class=" md:hidden px-7 py-2  text-white w-full text-center bg-primary">
                 Apply now</a>        </nav>
-        <a href="#" class="max-md:hidden px-7 py-2 rounded-full w-fit text-white bg-primary">
-
+        <a href="{{route('loginView')}}" class="max-md:hidden px-7 py-2 rounded-full w-fit text-white bg-primary">
             Apply now</a>
         <p class="md:hidden w-7 h-5  bg-black" id="burger"></p>
     </div>
@@ -67,7 +65,7 @@
             </p>
             <p>
                 <a href="{{route('registerView')}}" class="px-4 py-2 rounded-full bg-[#25626c]">create account</a>
-                <a href="#" class="px-4 py-2 rounded-full bg-[#25626c]">check balance</a>
+                <a href="{{route('loginView')}}" class="px-4 py-2 rounded-full bg-[#25626c]">check balance</a>
             </p>
         </div>
         <div class="absolute grid justify-between  grid-cols-4 gap-10 bottom-[-70px] w-full right-0 max-md:hidden px-40 text-black capitalize text-[12px] z-20 font-bold">
@@ -219,12 +217,12 @@
 
     </section>
     <section class="flex flex-col py-10 lg:py-24 items-center gap-5 text-white capitalize" style="background-image: url("{{asset('images/img.jpg')}}")">
-        <h1 class="font-semibold text-2xl lg:text-4xl">sign up for newsletter</h1>
+    <h1 class="font-semibold text-2xl lg:text-4xl">sign up for newsletter</h1>
 
-        <div class="flex gap-2">
-            <input type="email" class="placeholder-white focus:border-none rounded-md px-5 py-2 border border-white border-solid bg-transparent" id="mail" placeholder="your email">
-            <a href="" class="rounded-md px-5 py-2 bg-white text-blue-600">submit</a>
-        </div>
+    <div class="flex gap-2">
+        <input type="email" class="placeholder-white focus:border-none rounded-md px-5 py-2 border border-white border-solid bg-transparent" id="mail" placeholder="your email">
+        <a href="" class="rounded-md px-5 py-2 bg-white text-blue-600">submit</a>
+    </div>
     </section>
 </main>
 </body>

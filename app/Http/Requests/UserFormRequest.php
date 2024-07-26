@@ -11,11 +11,11 @@ class UserFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return TRUE;
+        return true;
     }
 
 
-    
+
 
     /**
      * Get the validation rules that apply to the request.

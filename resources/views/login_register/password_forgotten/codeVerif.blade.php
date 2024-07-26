@@ -2,18 +2,18 @@
 
 
 @section('content')
-    <a href="{{route('modalVerifView')}}" class="absolute top-0  flex place-items-center gap-1 pt-10 ml-5 text-center">
+    <a href="{{route('modalView')}}" class="absolute top-0  flex place-items-center gap-1 pt-10 ml-5 text-center">
         <ion-icon name="arrow-back" class="text-xl"></ion-icon>
         <p>Back</p>
     </a>
     <main>
         <div class="h-auto  w-[500px] bg-white mx-auto mt-[200px] py-7 px-6 rounded-xl shadow-xl  shadow-gray-400">
             <h1 class="text-center font-semibold text-4xl">Entrer Le Code</h1>
-            <div class="mt-10 flex justify-center gap-4">
-                <input type="text" class="w-[70px] h-[70px] rounded-md border border-gray-400 px-3 text-4xl" maxlength="1">
-                <input type="text" class="w-[70px] h-[70px] rounded-md border border-gray-400 px-3 text-4xl" maxlength="1">
-                <input type="text" class="w-[70px] h-[70px] rounded-md border border-gray-400 px-3 text-4xl" maxlength="1">
-                <input type="text" class="w-[70px] h-[70px] rounded-md border border-gray-400 px-3 text-4xl" maxlength="1">
+            <div class="cont mt-10 flex justify-center gap-4">
+                <input type="text" id="input1" class="w-[70px] h-[70px] rounded-md border border-gray-400 px-3 text-4xl" maxlength="1">
+                <input type="text" id="input2" class="w-[70px] h-[70px] rounded-md border border-gray-400 px-3 text-4xl" maxlength="1">
+                <input type="text" id="input3"  class="w-[70px] h-[70px] rounded-md border border-gray-400 px-3 text-4xl" maxlength="1">
+                <input type="text" id="input4" class="w-[70px] h-[70px] rounded-md border border-gray-400 px-3 text-4xl" maxlength="1">
             </div>
 
             <div class="mt-10">
@@ -33,27 +33,48 @@
 
 @section('script')
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const inputs = document.querySelectorAll('.cont input[type="text"]');
+            inputs.forEach((input, index) => {
+                input.addEventListener('input', () => {
+                    if (input.value.length === input.maxLength) {
+                        const  nextInput = inputs[index + 1];
+                        if (nextInput) {
+                            nextInput.focus();
+                        }
+                    }
+                });
+
+                input.addEventListener('keydown', (event) => {
+                    if (event.key === 'Backspace' && input.value.length === 0) {
+                        const prevInput = inputs[index - 1];
+                        if (prevInput) {
+                            prevInput.focus();
+                        }
+                    }
+                })
+            })
+
+        })
+
         let time = document.getElementById('time');
         let resend = document.getElementById('renvoyez');
         let timeout = document.getElementById('timeout');
 
-       setTimeout(()=> {
+        setTimeout(()=> {
 
-           let  interval =  setInterval(()=> {
-               let newTime = parseInt(time.textContent);
+            let  interval =  setInterval(()=> {
+                let newTime = parseInt(time.textContent);
 
-               newTime -= 1;
-               time.textContent = newTime;
+                newTime -= 1;
+                time.textContent = newTime;
 
-               if (time.textContent == '0') {
-                   clearInterval(interval);
-                   resend.classList.remove('hidden');
-                   timeout.classList.add('hidden');
-               }
-           },1000)
-           }, 2000)
+                if (time.textContent == '0') {
+                    clearInterval(interval);
+                    resend.classList.remove('hidden');
+                    timeout.classList.add('hidden');
+                }
+            },1000)
+        }, 2000)
     </script>
 @endsection
-
-
-
