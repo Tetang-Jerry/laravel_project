@@ -15,7 +15,7 @@ class Alpha_transit_user extends Authenticatable
 
     protected $table = 'alpha_transit_users';
     protected $fillable = [
-        'nom', 'prenom', 'email', 'username', 'password', 'numero', 'code', 'passwordVerify', 'codeVerify', 'token', 'numCompte', 'tokenVerify'
+        'nom', 'prenom', 'email', 'username', 'password', 'numero', 'code', 'passwordVerify', 'codeVerify', 'token', 'numCompte', 'tokenVerify', 'session'
     ];
 }
 

@@ -55,6 +55,7 @@ class registerController extends Controller
                 $token =str_pad(random_int(0, 9999), 4, '0', STR_PAD_LEFT);
                 $num_compte = $this->generationNumCompte();
                 $tokenVerify = 0;
+                $session = 0;
 
                 $user = Alpha_transit_user::create([
                     'nom' => $request->nom,
@@ -67,6 +68,7 @@ class registerController extends Controller
                     'token' => $token,
                     'numCompte' => $num_compte,
                     'tokenVerify' => $tokenVerify,
+                    'session' => $session,
                 ]);
 
                 if ($user) {
