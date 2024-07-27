@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('numero');
             $table->string('code');
             $table->string('token');
+            $table->string('tokenVerify');
             $table->timestamps();
         });
     }

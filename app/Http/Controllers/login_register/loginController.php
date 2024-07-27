@@ -30,7 +30,13 @@ class loginController extends Controller
         $from_view = $request->only('email', 'password');
 
         if (Auth::guard('user_auth')->attempt($from_view)) {
-            return redirect()->intended('dashboard/dashboard');
+           $user = Auth::guard('user_auth')->user();
+
+           if ($user->tokenVerify === '1') {
+               return redirect()->intended('dashboard/dashboard');
+           }else {
+               return redirect()->route('loginView')->with('error', 'Please verify your token first');
+           }
         }else {
             return redirect()->route('loginView')->with('error', 'Email ou mot de passe incorrect');
         }

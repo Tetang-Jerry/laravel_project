@@ -21,6 +21,7 @@ Route::middleware('auth:sanctum')->get('/dashboard', function () {
         Route::get('/register_2', [registerController::class, 'registerView_2'])->name('registerView2');
         Route::get('/modal', [registerController::class, 'modalView'])->name('modalView');
         Route::get('/code', [registerController::class, 'codeView'])->name('codeView');
+        Route::post('/tokenVerify', [registerController::class, 'tokenVerify'])->name('tokenVerify');
     });
 
 
@@ -45,7 +46,6 @@ Route::middleware('auth:sanctum')->get('/dashboard', function () {
 
     route::prefix('AT-admin')->group(function (){
         Route::get('/', [AdminController::class, 'adminView'])->name('adminView');
-        Route::get('/login', [loginController::class, 'loginView'])->name('loginView');
         Route::get('/allUser', [AdminController::class, 'all'])->name('allUser');
         Route::delete('/users/{id}', [AdminController::class, 'destroy'])->name('delete_users');
 

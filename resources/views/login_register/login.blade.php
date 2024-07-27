@@ -24,6 +24,7 @@
                         @if(Session::has('error'))
                             <p class="text-red-500 py-3 text-center">{{Session::get('error')}}</p>
                         @endif
+
                     </div>
 
                     <div class="mt-5">
