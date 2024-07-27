@@ -88,7 +88,7 @@
             </div>
 
             <div class="btn">
-                <a href="{{ route('valider') }}" class="btn-mail">Valider votre code</a>
+                <a href="{{route('codeView')}}" class="btn-mail">Valider votre code</a>
             </div>
 
             <p class="text-gray-600">Si vous n'avez pas demandé cette vérification, veuillez ignorer cet email.</p>
