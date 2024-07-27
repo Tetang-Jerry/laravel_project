@@ -28,7 +28,8 @@ class registerController extends Controller
         return view('login_register.register_2');
     }
 
-    public function modalView() {
+    public function modalView()
+    {
         return view('login_register.modal');
     }
 
@@ -37,16 +38,29 @@ class registerController extends Controller
         return view('login_register.code');
     }
 
+    public function valider()
+    {
+        return view('login_register.code');
+    }
+    
+
+    public function boutton()
+    {
+        return view('mail.register-mail');
+    }
+
+
     public function generationNumCompte(): int
     {
-        do{
+        do {
             $num_compte = random_int(100000000, 999999999);
         } while (Alpha_transit_user::where('numCompte', $num_compte)->exists());
 
         return $num_compte;
     }
 
-    public function registerUser(UserFormRequest $request) {
+    public function registerUser(UserFormRequest $request)
+    {
         try {
             DB::transaction(function() use ($request) {
                 $token =str_pad(random_int(0, 9999), 4, '0', STR_PAD_LEFT);
@@ -68,8 +82,7 @@ class registerController extends Controller
                     Mail::to($user->email)->send(new RegisterMail($user));
                 }
             });
-        }catch (\Throwable $th) {
-
+        } catch (\Throwable $th) {
         }
 
 

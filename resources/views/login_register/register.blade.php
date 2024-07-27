@@ -9,7 +9,7 @@
         </a>
         <div class="flex flex-col  place-items-center">
             <div class="h-fit mt-3"><img src="{{asset('images/watermark_preview_image20240717-1-urrith-removebg-preview.png')}}" alt="" class="w-[250px] h-fit"></div>
-            <form action="{{route('registerUser')}}" method="POST" class="mt-6 pt-10 px-12 w-2/6 h-auto  shadow-xl pb-4
+            <form action="{{route('loginUser')}}" method="POST" class="mt-6 pt-10 px-12 w-2/6 h-auto  shadow-xl pb-4
              shadow-gray-400 rounded-xl bg-white mx-auto">
                 @csrf
                 <h1 class="text-primary font-semibold text-3xl text-center">S'enregistrer</h1>
@@ -56,6 +56,7 @@
                         <input id="password" type="password" name="password" class="border border-gray-400 rounded-md py-3 px-3 focus:border focus:outline-none focus:border-gray-800">
                         <ion-icon name="eye" onclick="visible()" class="text-2xl absolute z-40 right-3 top-9 cursor-pointer"></ion-icon>
                         {!! $errors->first('password', "<p class='text-red-500'>:message</p>" ) !!}
+                        Auth::guard('user_auth')->user()->username
                     </div>
 
                     <div class="flex-col flex  ">
