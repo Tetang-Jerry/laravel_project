@@ -38,9 +38,10 @@
                 </div>
 
                 <!-- profile -->
-                <div class="relative group flex space-x-[20px] items-center">
-                    <p>Ashley</p>
-                    <img src="/images/profile.jpg" class="h-[40px] w-[40px] rounded-full" alt="profile-picture">
+                <div class="relative cursor-pointer group pl-4 border-l border-gray-400 flex space-x-[20px] items-center">
+                    <p class="font-semibold">{{$user=Auth::guard('user_auth')->user()->username}}</p>
+                    <ion-icon name="person-circle-outline" class="text-4xl"></ion-icon>
+
 
                     <!-- Dropdown menu -->
                     <div class="absolute hidden -right-9 top-10 group-hover:block first-letter: z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
@@ -122,7 +123,11 @@
 
     <script src="{{ asset('js/hidebalance.js') }}">
 
-    </script>
+    </script>\
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
 
