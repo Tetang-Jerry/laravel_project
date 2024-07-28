@@ -82,7 +82,7 @@
                 <p class="font-bold text-2xl flex justify-between">
                     <span class="text-primary font-bold" >$<span class="text-primary font-bold" id="balance">15000</span></span>
 
-                    <i class="fa-regular fa-eye-slash text-primary mt-2" id="toggleBalance"></i>
+                    <i class="fa-regular cursor-pointer fa-eye-slash text-primary mt-2" id="toggleBalance"></i>
                 </p>
                 <p class="font-bold text-primary mb-2">
                     Compte courant
@@ -96,7 +96,7 @@
                     <span class="text-primary font-bold">$<span class="text-primary font-bold" id="balance2">30000</span></span>
 
 
-                    <i class="fa-regular fa-eye-slash text-primary mt-2" id="toggleBalance2"></i>
+                    <i class="fa-regular cursor-pointer fa-eye-slash text-primary mt-2" id="toggleBalance2"></i>
                 </p>
                 <p class="font-bold text-primary">
                     Compte Epargne
