@@ -31,7 +31,7 @@ class loginController extends Controller
 
         if(Auth::guard('user_auth')->attempt($from_view)){
             # code...
-            return redirect()->intendend('dashboard/dashboard');
+            return redirect()->intendend('dashboard/');
         }else{
              # code...
             return redirect()->route('login')->witch('error', 'email ou mot de passe incorrect');
