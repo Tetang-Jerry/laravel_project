@@ -40,7 +40,7 @@
             @foreach($users as $user)
                 <tr>
                     <td class="py-2 px-3 text-left border border-gray-500">{{ $user->id }}</td>
-                    <td class="py-2 px-3 text-left border border-gray-500">{{ $user->numcompte }}</td>
+                    <td class="py-2 px-3 text-left border border-gray-500">{{ $user->numCompte }}</td>
                     <td class="py-2 px-3 text-left border border-gray-500">{{ $user->nom }}</td>
                     <td class="py-2 px-3 text-left border border-gray-500">{{ $user->prenom }}</td>
                     <td class="py-2 px-3 text-left border border-gray-500">{{ $user->username }}</td>
