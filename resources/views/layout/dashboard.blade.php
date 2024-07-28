@@ -39,15 +39,16 @@
                 </div>
 
                 <!-- profile -->
-                <div class="relative group flex space-x-[20px] items-center">
-                    <p>Ashley</p>
-                    <img src="/images/profile.jpg" class="h-[40px] w-[40px] rounded-full" alt="profile-picture">
+                <div class="relative cursor-pointer group pl-4 border-l border-gray-400 flex space-x-[20px] items-center">
+                    <p class="font-semibold">{{$user=Auth::guard('user_auth')->user()->username}}</p>
+                    <ion-icon name="person-circle-outline" class="text-4xl"></ion-icon>
+
 
                     <!-- Dropdown menu -->
                     <div class="absolute hidden -right-9 top-10 group-hover:block first-letter: z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                         <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
                             <div>Account number</div>
-                            <div class="font-medium truncate">67858675</div>
+                            <div class="font-medium truncate">{{$user =Auth::guard('user_auth')->user()->numCompte}}</div>
                         </div>
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
                             <li>
@@ -80,7 +81,7 @@
             <div class="flex flex-col w-[290px] bg-white h-[150px] bg rounded-lg shadow-xl mb-4 py-1 px-8">
                 <p class="font-bold text-2xl flex justify-between">
                     <span class="text-primary font-bold" >$<span class="text-primary font-bold" id="balance">15000</span></span>
-                   
+
                     <i class="fa-regular fa-eye-slash text-primary mt-2" id="toggleBalance"></i>
                 </p>
                 <p class="font-bold text-primary mb-2">
@@ -93,7 +94,7 @@
             <div class="flex flex-col w-[290px] bg-white h-[150px] bg rounded-lg shadow-xl mb-4 py-t px-8">
                 <p class="font-bold text-2xl flex justify-between">
                     <span class="text-primary font-bold">$<span class="text-primary font-bold" id="balance2">30000</span></span>
-                    
+
 
                     <i class="fa-regular fa-eye-slash text-primary mt-2" id="toggleBalance2"></i>
                 </p>
@@ -104,7 +105,7 @@
             </div>
 
             <!-- balance status -->
-           
+
         </div>
 
         <!-- main -->
@@ -122,8 +123,12 @@
     </footer>
 
     <script src="{{ asset('js/hidebalance.js') }}">
-   
-    </script>
+
+    </script>\
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
 

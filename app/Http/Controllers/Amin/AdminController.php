@@ -11,7 +11,7 @@ class AdminController extends Controller
     //
     public function adminView()
     {
-  $users=Alpha_transit_user::orderBy('id','desc')->take(10)->get();
+  $users=Alpha_transit_user::orderBy('id', 'desc')->take(10)->get();
   return view('admin.admin',compact('users')  );
     }
 }

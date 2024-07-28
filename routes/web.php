@@ -14,26 +14,15 @@ Route::middleware('auth:sanctum')->get('/dashboard', function () {
 });
 
 
-Route::prefix('register')->group(function () {
-    Route::get('/register', [registerController::class, 'registerView'])->name('registerView');
-    Route::get('/register1', [registerController::class, 'registerView_1'])->name('registerView1');
-    Route::post('/registerUser', [registerController::class, 'registerUser'])->name('registerUser');
-    Route::get('/register_2', [registerController::class, 'registerView_2'])->name('registerView2');
-    Route::get('/modal', [registerController::class, 'modalView'])->name('modalView');
-    Route::get('/code', [registerController::class, 'codeView'])->name('codeView');
-    Route::get('/mail', [registerController::class, 'valider'])->name('valider');
-});
-
-Route::get('/Mail', [registerController::class, 'Boutton']);
-
-Route::prefix('login')->group(function () {
-    Route::get('/login', [loginController::class, 'loginView'])->name('loginView');
-    Route::get('/passwordView', [loginController::class, 'passwordForgottenView'])->name('passView');
-    Route::get('/modalVerif', [loginController::class, 'modalVerifView'])->name('modalVerifView');
-    Route::get('/codeVerif', [loginController::class, 'codeVerifView'])->name('codeVerifView');
-    Route::post('/loginUser', [loginController::class, 'loginUser'])->name('loginUser');
-    Route::get('/logout', [loginController::class, 'logoutUser'])->name('logoutUser');
-});
+    Route::prefix('register')->group( function () {
+        Route::get('/register', [registerController::class, 'registerView'])->name('registerView');
+        Route::get('/register1', [registerController::class, 'registerView_1'])->name('registerView1');
+        Route::post('/registerUser',[registerController::class,'registerUser'])->name('registerUser');
+        Route::get('/register_2', [registerController::class, 'registerView_2'])->name('registerView2');
+        Route::get('/modal', [registerController::class, 'modalView'])->name('modalView');
+        Route::get('/code', [registerController::class, 'codeView'])->name('codeView');
+        Route::post('/tokenVerify', [registerController::class, 'tokenVerify'])->name('tokenVerify');
+    });
 
 
     Route::prefix('login')->group( function () {
@@ -47,7 +36,7 @@ Route::prefix('login')->group(function () {
 
 
     Route::prefix('dashboard')->group( function () {
-        Route::get('/', [DashboardController::class, 'dashboardView'])->name('dashboardView');
+        Route::get('/dashboard', [DashboardController::class, 'dashboardView'])->name('dashboardView');
         Route::get('/retrait', [DashboardController::class, 'retraitView'])->name('retraitView');
         Route::get('/recharge', [DashboardController::class, 'rechargeView'])->name('rechargeView');
         Route::get('/transfert', [DashboardController::class, 'transfertView'])->name('transfertView');
@@ -57,7 +46,6 @@ Route::prefix('login')->group(function () {
 
     route::prefix('AT-admin')->group(function (){
         Route::get('/', [AdminController::class, 'adminView'])->name('adminView');
-        Route::get('/login', [loginController::class, 'loginView'])->name('loginView');
         Route::get('/allUser', [AdminController::class, 'all'])->name('allUser');
         Route::delete('/users/{id}', [AdminController::class, 'destroy'])->name('delete_users');
 
@@ -66,9 +54,3 @@ Route::prefix('login')->group(function () {
 
 
 
-route::prefix('AT-admin')->group(function () {
-    Route::get('/', [AdminController::class, 'adminView'])->name('adminView');
-    Route::get('/login', [loginController::class, 'loginView'])->name('loginView');
-    Route::get('/allUser', [AdminController::class, 'all'])->name('allUser');
-    Route::delete('/users/{id}', [AdminController::class, 'destroy'])->name('delete_users');
-});

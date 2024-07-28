@@ -25,40 +25,35 @@ class loginController extends Controller
         return view('login_register.password_forgotten.codeVerif');
     }
 
-    public function login(Request $request) {
-
-        $from_view = $request->only('email','password');
-
-        if(Auth::guard('user_auth')->attempt($from_view)){
-            # code...
-            return redirect()->intendend('dashboard/');
-        }else{
-             # code...
-            return redirect()->route('login')->witch('error', 'email ou mot de passe incorrect');
-        }
-    }
-
-    public function logoutUser(){
-        if(Auth::guard('user_auth')->check()){
-            Auth::guard('user_auth')->logout();
-            return redirect()->route('login');
-        }
-        return redirect()->route('login');
-    }
-
-
-   
-    
-
     public function loginUser(LoginFormRequest $request)
     {
         $from_view = $request->only('email', 'password');
 
         if (Auth::guard('user_auth')->attempt($from_view)) {
-            return redirect()->intended('dashboard/dashboard');
+           $user = Auth::guard('user_auth')->user();
+
+           if ($user->tokenVerify === '1') {
+               $user->update(['session' => 1]);
+               return redirect()->intended('dashboard/dashboard');
+
+           }else {
+               return redirect()->route('loginView')->with('error', 'Please verify your token first');
+           }
         }else {
             return redirect()->route('loginView')->with('error', 'Email ou mot de passe incorrect');
         }
+    }
+
+    public function logoutUser()
+    {
+        if (Auth::guard('user_auth')->check()) {
+            $user =Auth::guard('user_auth')->user();
+            $user->update(['session' => 0]);
+            Auth::guard('user_auth')->logout();
+
+        }
+
+        return redirect()->route('loginView');
     }
 }
 
