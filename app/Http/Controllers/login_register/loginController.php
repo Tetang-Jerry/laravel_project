@@ -50,10 +50,12 @@ class loginController extends Controller
     public function logoutUser()
     {
         if (Auth::guard('user_auth')->check()) {
+            $user =Auth::guard('user_auth')->user();
+            $user->update(['session' => 0]);
             Auth::guard('user_auth')->logout();
-            $user = Auth::guard('user_auth')->user();
+
         }
-        // $user->update(['session' => 0]);
+
         return redirect()->route('loginView');
     }
 }

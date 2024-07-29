@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Alpha_transit_user;
+use App\Models\Admin;
 
 return [
 
@@ -46,7 +47,12 @@ return [
         'user_auth' => [
             'driver' => 'session',
             'provider' => 'user_auth',
+        ],
+        'admin_auth'=>[
+            'driver'=>'session',
+            'provider'=>'admin_auth'
         ]
+
     ],
 
     /*
@@ -76,6 +82,10 @@ return [
         'user_auth' => [
             'driver' => 'eloquent',
             'model' =>  Alpha_transit_user::class
+        ],
+        'admin_auth'=>[
+            'driver'=>'eloquent',
+            'model'=>Admin::class
         ]
 
         // 'users' => [
