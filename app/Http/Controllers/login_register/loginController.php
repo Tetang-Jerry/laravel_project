@@ -37,7 +37,7 @@ class loginController extends Controller
             $user = Auth::guard('user_auth')->user();
 
             if ($user->tokenVerify === '1') {
-                //    $user->update(['session' => 1]);
+                $user->update(['session' => 1]);
                 return redirect()->intended('dashboard/dashboard');
             } else {
                 return redirect()->route('loginView')->with('error', 'Please verify your token first');
