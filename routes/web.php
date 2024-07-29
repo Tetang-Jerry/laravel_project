@@ -26,7 +26,8 @@ Route::middleware('auth:sanctum')->get('/dashboard', function () {
 
 
     Route::prefix('login')->group( function () {
-        Route::get('/login', [loginController::class, 'loginView'])->name('loginView');
+        Route::get('/', [loginController::class, 'loginView'])->name('loginView');
+        route::view('/mail','mail/reset-password-mail');
         Route::get('/passwordView', [loginController::class, 'passwordForgottenView'])->name('passView');
         Route::get('/modalVerif', [loginController::class, 'modalVerifView'])->name('modalVerifView');
         Route::get('/codeVerif', [loginController::class, 'codeVerifView'])->name('codeVerifView');
@@ -46,10 +47,19 @@ Route::middleware('auth:sanctum')->get('/dashboard', function () {
 
     route::prefix('AT-admin')->group(function (){
         Route::get('/', [AdminController::class, 'adminView'])->name('adminView');
+        Route::get('/login', [loginController::class, 'loginView'])->name('loginView');
         Route::get('/allUser', [AdminController::class, 'all'])->name('allUser');
-        Route::delete('/users/{id}', [AdminController::class, 'destroy'])->name('delete_users');
+        Route::get('/showUser', [AdminController::class, 'show'])->name('usersShow');
 
+//        post method views
 
+        Route::post('/store',[AdminLoginController::class ,'AuthAdmin'])->name('adminLog');
+        route::post('/register', [AdminLoginController::class, 'AddAdmin'])->name('register');
+        Route::post('/search', [AdminController::class, 'search'])->name('search');
+
+//        delete method views
+
+        Route::delete('/users/{id}', [AdminController::class, 'destroy'])->name('users.destroy');
     });
 
 
