@@ -26,6 +26,7 @@ class Alpha_transit_userFactory extends Factory
             'numero'=> fake('numero')->unique()->numberBetween(  ),
             'numcompte'=> fake()->unique()->numberBetween(  ),
             'token'=> fake()->unique()->numberBetween(  ),
+             'session' =>fake()->unique()->numberBetween(  ),
 
         ];
     }

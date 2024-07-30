@@ -55,5 +55,42 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const profile = document.querySelector("#profil");
+    const dropdown = document.querySelector(".dropdown");
 
+    const edit = document.getElementById("edit");
+    const logout = document.querySelector(".logout");
 
+    profile.addEventListener("click", () => {
+        // Toggle la classe "hidden" pour montrer/cacher le menu déroulant
+        dropdown.classList.toggle("hidden");
+    });
+
+    edit.addEventListener("click", () => {
+        // Cache le menu déroulant lorsqu'on clique sur "Edit profile"
+        dropdown.classList.add("hidden");
+    });
+
+    logout.addEventListener("click", () => {
+        // Cache le menu déroulant lorsqu'on clique sur "Sign out"
+        dropdown.classList.add("hidden");
+    });
+});
+
+const Show = document.getElementById("show");
+const close = document.getElementById("close");
+const balances = document.getElementById("balances");
+Show.addEventListener("click",()=>{
+
+    balances.classList.remove("-left-full");
+    Show.classList.add("hidden");
+    document.body.style.overflow = 'hidden';
+
+})
+
+close.addEventListener("click",()=>{
+    balances.classList.add("-left-full");
+    Show.classList.remove("hidden");
+    document.body.style.overflow = 'auto';
+})
