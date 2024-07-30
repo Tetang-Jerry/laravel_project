@@ -10,6 +10,31 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @vite('resources/css/app.css')
     @yield('cssImport')
+
+    <style>
+        /* Style de base pour le tableau */
+       table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+           /* Style pour les titres du tableau */
+        thead th {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+         /* Style pour les lignes du tableau */
+         tbody td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+          /* Ajouter des bordures entre les titres */
+          thead th:not(:last-child) {
+            border-right: 1px solid #ddd;
+        }
+    </style>
 </head>
 
 <body class="flex flex-col bg-backgrounddashboard ">
@@ -26,12 +51,13 @@
 
             <!--menu-items -->
             <div class="hidden md:flex space-x-[20px]">
-                <a href="{{ route('adminView') }}" class="hover:text-customBlue text-[16px] font-bold text-emerald-800">Home</a>
-                <a href="{{ route('accounts.index') }}" class="hover:text-customBlue text-[16px]">Accounts</a>
-                <a href="#" class="hover:text-customBlue text-[16px]">Transactions</a>
+                <a href="{{ route('adminView') }}" class="hover:text-customBlue text-[16px]">Home</a>
+                <a href="{{ route('accounts.index') }}" class="hover:text-customBlue text-[16px] font-bold text-emerald-800">Accounts</a>
+                <a href="#" class="hover:text-customBlue text-[16px]">Transaction</a>
                 <a href="#" class="hover:text-customBlue text-[16px]">History</a>
                 <a href="#" class="hover:text-customBlue text-[16px]">Help</a>
             </div>
+
 
             <div class="flex items-center justify-between space-x-[40px]">
                 <!--icons -->
@@ -67,9 +93,32 @@
 
     <!-- main -->
 
-    <Main class="flex w-full border border-1">
+    <Main class="flex w-full pt-32 border border-1">
 
-        @yield('container')
+        <table >
+            <thead>
+                <tr>
+                    <th class="tab">Numéro de Compte</th>
+                    <th class="tab">Nom</th>
+                    <th class="tab">Prénom</th>
+                    <th class="tab">Compte Courant</th>
+                    <th class="tab">Plans Epargne</th>
+                    <th class="tab">Date d'Ouverture</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($accounts as $account)
+                    <tr>
+                        <td>{{ $account->numcomp }}</td>
+                        <td>{{ $account->nom }}</td>
+                        <td>{{ $account->prenom }}</td>
+                        <td>{{ $account->compte_courant }}</td>
+                        <td>{{ $account->Plans_epargne }}</td>
+                        <td>{{ $account->date_ouverture }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
 
     </Main>
     <!-- footer -->

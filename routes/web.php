@@ -51,7 +51,8 @@ Route::middleware('auth:sanctum')->get('/dashboard', function () {
         Route::get('/login', [loginController::class, 'loginView'])->name('loginView');
         Route::get('/allUser', [AdminController::class, 'all'])->name('allUser');
         Route::get('/showUser', [AdminController::class, 'show'])->name('usersShow');
-
+        Route::get('/accounts', [AdminController::class, 'Accounts'])->name('Accounts');
+        Route::get('/accounts', [AccountController::class, 'index'])->name('accounts.index');
 //        post method views
 
         Route::post('/store',[AdminLoginController::class ,'AuthAdmin'])->name('adminLog');
