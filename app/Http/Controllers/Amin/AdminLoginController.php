@@ -24,7 +24,7 @@ class AdminLoginController extends Controller
     //     }else{
     //         return redirect()->route('adminLogin')->with('error','email or password is incorrect');
     //     }
-        
+
     // }
     public function AuthAdmin(AdminRequest $request)
     {
@@ -48,7 +48,7 @@ class AdminLoginController extends Controller
     }
 
     public function AddAdmin(AdminRequest $admin){
-        $admin=admins::create([
+        $admin=admin::create([
             'nom' => $admin->nom,
             'prenom' => $admin->prenom,
             'email' =>$admin->email,

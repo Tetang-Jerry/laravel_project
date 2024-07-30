@@ -7,6 +7,7 @@ use App\Http\Controllers\login_register\registerController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Account\AccountController;
 
 Route::get('/', [UserController::class, 'home'])->name('home');
 
@@ -51,7 +52,8 @@ Route::prefix('dashboard')->group(function () {
         Route::get('/login', [loginController::class, 'loginView'])->name('loginView');
         Route::get('/allUser', [AdminController::class, 'all'])->name('allUser');
         Route::get('/showUser', [AdminController::class, 'show'])->name('usersShow');
-
+        Route::get('/accounts', [AdminController::class, 'Accounts'])->name('Accounts');
+        Route::get('/accounts', [AccountController::class, 'index'])->name('accounts.index');
 //        post method views
 
         Route::post('/store',[AdminLoginController::class ,'AuthAdmin'])->name('adminLog');

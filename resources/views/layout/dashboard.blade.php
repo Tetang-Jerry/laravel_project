@@ -12,9 +12,9 @@
     @yield('cssImport')
 </head>
 
-<body class="bg-backgrounddashboard flex-col flex">
+<body class="flex flex-col bg-backgrounddashboard">
     <!-- header -->
-    <header class="fixed w-full mx-auto py-3 px-16 shadow-md bg-white z-20 top-0">
+    <header class="fixed top-0 z-20 w-full px-16 py-3 mx-auto bg-white shadow-md">
         <!-- flex container -->
         <div class="flex items-center justify-between">
             <!--logo -->
@@ -45,7 +45,7 @@
 
 
                     <!-- Dropdown menu -->
-                    <div class="absolute hidden -right-9 top-10 group-hover:block first-letter: z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                    <div class="absolute z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow -right-9 top-10 group-hover:block first-letter: w-44 dark:bg-gray-700 dark:divide-gray-600">
                         <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
                             <div>Account number</div>
                             <div class="font-medium truncate">{{$user =Auth::guard('user_auth')->user()->numCompte}}</div>
@@ -73,18 +73,18 @@
         <!-- side bar -->
         <div class="flex flex-col items-center bg-transparent py-[60px] h-[calc(100vh-2rem)] w-full max-w-[24rem] px-6">
             <div class="p-4 flex space-x-[200px] mb-4">
-                <h5 class="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-primary">Account</h5>
-                <h5 class="font-bold text-3xl text-primary">+</h5>
+                <h5 class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-primary">Account</h5>
+                <h5 class="text-3xl font-bold text-primary">+</h5>
             </div>
 
             <!-- compte courant -->
             <div class="flex flex-col w-[290px] bg-white h-[150px] bg rounded-lg shadow-xl mb-4 py-1 px-8">
-                <p class="font-bold text-2xl flex justify-between">
-                    <span class="text-primary font-bold" >$<span class="text-primary font-bold" id="balance">15000</span></span>
+                <p class="flex justify-between text-2xl font-bold">
+                    <span class="font-bold text-primary" >$<span class="font-bold text-primary" id="balance">15000</span></span>
 
-                    <i class="fa-regular cursor-pointer fa-eye-slash text-primary mt-2" id="toggleBalance"></i>
+                    <i class="mt-2 cursor-pointer fa-regular fa-eye-slash text-primary" id="toggleBalance"></i>
                 </p>
-                <p class="font-bold text-primary mb-2">
+                <p class="mb-2 font-bold text-primary">
                     Compte courant
                 </p>
                 <img src="/images/wallet.png" alt="wallet" class="wallet w-[70px] place-self-end">
@@ -92,11 +92,11 @@
 
             <!-- compte epargne -->
             <div class="flex flex-col w-[290px] bg-white h-[150px] bg rounded-lg shadow-xl mb-4 py-t px-8">
-                <p class="font-bold text-2xl flex justify-between">
-                    <span class="text-primary font-bold">$<span class="text-primary font-bold" id="balance2">30000</span></span>
+                <p class="flex justify-between text-2xl font-bold">
+                    <span class="font-bold text-primary">$<span class="font-bold text-primary" id="balance2">30000</span></span>
 
 
-                    <i class="fa-regular cursor-pointer fa-eye-slash text-primary mt-2" id="toggleBalance2"></i>
+                    <i class="mt-2 cursor-pointer fa-regular fa-eye-slash text-primary" id="toggleBalance2"></i>
                 </p>
                 <p class="font-bold text-primary">
                     Compte Epargne
@@ -109,7 +109,7 @@
         </div>
 
         <!-- main -->
-        <main class="flex border border-1 w-full">
+        <main class="flex w-full border border-1">
             @yield("contain")
         </main>
 
