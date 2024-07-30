@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Account\AccountController;
 use App\Http\Controllers\Amin\AdminController;
 use App\Http\Controllers\Amin\AdminLoginController;
 use App\Http\Controllers\login_register\loginController;
