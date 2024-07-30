@@ -17,9 +17,9 @@ class Alpha_transit_userFactory extends Factory
     public function definition(): array
     {
         return [
-            'nom' => fake('name')->sentence(),
-            'prenom' => fake('prenom')->sentence(),
-            'username' => fake('username')->unique()->sentence(),
+            'nom' => fake('name')->word(),
+            'prenom' => fake('prenom')->word(),
+            'username' => fake('username')->unique()->word(),
             'email' => fake('email')->unique()->email(),
             'password' => fake('password')->unique()->password(),
             'code'=> fake()->unique()->numberBetween(),
