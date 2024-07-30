@@ -22,9 +22,9 @@
 
         <!--menu-items -->
         <div class="hidden md:flex space-x-[20px]">
-            <a href="#" class="hover:text-customBlue text-[16px]">Home</a>
-            <a href="#" class="hover:text-customBlue text-[16px]" >Dashboard</a>
-            <a href="#" class="hover:text-customBlue text-[16px]">Services</a>
+            <a href="{{ route('adminView') }}" class="hover:text-customBlue text-[16px] font-bold text-emerald-800">Home</a>
+            <a href="{{ route('accounts.index') }}" class="hover:text-customBlue text-[16px]">Accounts</a>
+            <a href="#" class="hover:text-customBlue text-[16px]">Transactions</a>
             <a href="#" class="hover:text-customBlue text-[16px]">History</a>
             <a href="#" class="hover:text-customBlue text-[16px]">Help</a>
         </div>
