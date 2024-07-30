@@ -17,15 +17,18 @@ class Alpha_transit_userFactory extends Factory
     public function definition(): array
     {
         return [
-            'nom' => fake('name')->sentence(),
-            'prenom' => fake('prenom')->sentence(),
-            'username' => fake('username')->unique()->sentence(),
+            'nom' => fake('name')->word(),
+            'session'=>'0',
+            'prenom' => fake('prenom')->word(),
+            'username' => fake('username')->unique()->word(),
             'email' => fake('email')->unique()->email(),
             'password' => fake('password')->unique()->password(),
             'code'=> fake()->unique()->numberBetween(),
             'numero'=> fake('numero')->unique()->numberBetween(  ),
             'numcompte'=> fake()->unique()->numberBetween(  ),
             'token'=> fake()->unique()->numberBetween(  ),
+            'tokenverify'=> fake()->unique()->numberBetween(  ),
+
 
         ];
     }

@@ -50,30 +50,41 @@
                     </div>
                     <hr />
                     <div class="overflow-x-auto">
-                    <table class="min-w-full border-collapse">
-    <thead>
-        <tr class="bg-gray-300">
-            <th class="py-2 px-3 text-left border border-gray-500">Id</th>
-            <th class="py-2 px-3 text-left border border-gray-500">Numéro de compte</th>
-            <th class="py-2 px-3 text-left border border-gray-500">Nom</th>
-            <th class="py-2 px-3 text-left border border-gray-500">Prénom</th>
-            <th class="py-2 px-3 text-left border border-gray-500">Nom d'utilisateur</th>
-            <th class="py-2 px-3 text-left border border-gray-500">Email</th>
-            <th class="py-2 px-3 text-left border border-gray-500">Telephone</th>
-            <th class="py-2 px-3 text-left border border-gray-500">Option</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($users as $user)
-            <tr>
-                <td class="py-2 px-3 text-left border border-gray-500">{{ $user->id }}</td>
-                <td class="py-2 px-3 text-left border border-gray-500">{{ $user->numCompte }}</td>
-                <td class="py-2 px-3 text-left border border-gray-500">{{ $user->nom }}</td>
-                <td class="py-2 px-3 text-left border border-gray-500">{{ $user->prenom }}</td>
-                <td class="py-2 px-3 text-left border border-gray-500">{{ $user->username }}</td>
-                <td class="py-2 px-3 text-left border border-gray-500">{{ $user->email }}</td>
-                <td class="py-2 px-3 text-left border border-gray-500">{{ $user->numero}}</td>
-                <td class="py-2 px-3 text-left border border-gray-500">
+
+<table class="min-w-full bg-white rounded-lg shadow">
+                <thead>
+                    <tr class="w-full bg-gray-200 text-left text-gray-600 uppercase text-sm leading-normal">
+                    <th class="py-2 px-5">Id</th>
+                        <th class="py-2 px-5">Status</th>
+                    <th class="py-2 px-5">Numéro de compte</th>
+                    <th class="py-2 px-5">Nom</th>
+                    <th class="py-2 px-5">Prénom</th>
+                    <th class="py-2 px-5">Nom d'utilisateur</th>
+                    <th class="py-2 px-5">Email</th>
+                    <th class="py-2 px-5">Telephone</th>
+                    <th class="py-2 px-5">Option</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-600 text-sm font-light">
+                 @foreach ($users as $user)
+                    <tr class="border-b border-gray-200 hover:bg-gray-100">
+                    <td class="py-3 px-6">{{ $user->id }}</td>
+                        <td class="py-3 px-6">
+                            @if($user->session >0)
+                                <span class="border-2 border-solid  border-green-500 text-white rounded-full w-2 px-2 bg-green-600 h-2">online</span>
+                            @else
+                                <span class="border-2 border-solid  border-red-500 text-white rounded-full w-2 px-2 bg-red-600 h-2">offline</span>
+                            @endif
+                        </td>
+
+
+                <td class="py-3 px-6">{{ $user->numCompte }}</td>
+                <td class="py-3 px-6">{{ $user->nom }}</td>
+                <td class="py-3 px-6">{{ $user->prenom }}</td>
+                <td class="py-3 px-6">{{ $user->username }}</td>
+                <td class="py-3 px-6">{{ $user->email }}</td>
+                <td class="py-3 px-6">{{ $user->numero}}</td>
+                <td class="py-3 px-6">
                     <div class="flex gap-1">
                         <a href="#" onclick="showUser({{$user->id}})" class="px-5 py-1 text-white bg-green-500">More</a>
                         <form action="{{ route('users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
@@ -83,10 +94,11 @@
                         </form>
                     </div>
                 </td>
-            </tr>
-        @endforeach
-    </tbody>
-</table>
+                    </tr>
+                    @endforeach
+
+                </tbody>
+            </table>
 
 
 
@@ -122,9 +134,9 @@
 
 
     function showUser(id) {
-{{--    fetch(`/users/${id}`)--}}
+<!-- {{--    fetch(`/users/${id}`)--}}
 {{--    .then(response => response.json())--}}
-{{--    .then(user => {--}}
+{{--    .then(user => {--}} -->
     document.getElementById('modalUserId').textContent = "id";
     document.getElementById('modalUserNumcompte').textContent = "numcompte";
     document.getElementById('modalUserNom').textContent = "nom";
@@ -133,7 +145,7 @@
     document.getElementById('modalUserEmail').textContent = "email";
     document.getElementById('modalUserNumero').textContent = "numero";
     document.getElementById('userModal').classList.remove('hidden');
-{{--    });--}}
+ <!-- }); -->
     }
 
     function closeModal() {
