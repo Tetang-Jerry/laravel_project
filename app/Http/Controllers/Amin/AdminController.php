@@ -29,7 +29,7 @@ class AdminController extends Controller
         $user = Alpha_transit_user::findOrFail($id);
         $user->delete();
 
-        return redirect()->route('adminView')->with('success', 'User deleted successfully');
+        return redirect()->back()->with('success', 'User deleted successfully');
     }
 
     //search user function
