@@ -95,7 +95,6 @@
 
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script >
     {{--    search bar--}}
     function searchTable() {
@@ -118,7 +117,7 @@
             }
         }
     }
-    function confirmDelete(userId) {
+    function confirmDelete() {
         const deleteForm = document.getElementById('deleteForm');
         deleteForm.action = `{{ route('users.destroy', $user->id) }}`;
         const deleteModal = document.getElementById('deleteModal');
@@ -129,7 +128,7 @@
         const deleteModal = document.getElementById('deleteModal');
         deleteModal.classList.add('hidden');
     }
-    function showUser(id) {
+    function showUser() {
         <!-- {{--    fetch(`/users/${id}`)--}}
         {{--    .then(response => response.json())--}}
         {{--    .then(user => {--}} -->
@@ -144,7 +143,7 @@
         <!-- }); -->
     }
 
-    function closeModal() {
+    function showcloseModal() {
         document.getElementById('userModal').classList.add('hidden');
     }
 </script>
