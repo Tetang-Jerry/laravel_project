@@ -100,12 +100,12 @@
      </header>
 
         <!-- main -->
-        <main class="grid grid-cols-1 gap-2 mt-24 w-full relative px-4 lg:grid lg:grid-cols-5">
+        <main class="grid grid-cols-1 gap-2 mt-24 pt-7 w-full relative px-4 lg:grid lg:grid-cols-5">
 
             {{-- see balance --}}
 
-            <div class="m-4 md:hidden " id="show"><img src="/images/wallet.png" alt="wallet" class=" cursor-pointer w-[70px] mb-3">
-            </div>
+            <img src="/images/wallet.png" alt="wallet" class=" cursor-pointer w-[70px] mb-3 md:hidden" id="show">
+           
 
 
             {{-- container -contain 1 --}}

@@ -40,3 +40,12 @@
         width: 45%;
     }
 }
+
+#block2{
+    transition:left 1s ease-in-out ;
+}
+
+.borders{
+    border: 2px;
+    border-color:#25626c;
+}
