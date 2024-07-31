@@ -96,9 +96,8 @@
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script >
-    {{--    search bar--}}
     function searchTable() {
-        let input = document.getElementById('default-search').value.toLowerCase();
+        let input = document.getElementById('searchbar').value.toLowerCase();
         let rows = document.getElementById('userTable').getElementsByTagName('tr');
 
         for (let i = 0; i < rows.length; i++) {
@@ -117,35 +116,40 @@
             }
         }
     }
-    function confirmDelete() {
+
+    function confirmDelete(userId) {
         const deleteForm = document.getElementById('deleteForm');
-        deleteForm.action = `{{ route('users.destroy', $user->id) }}`;
+        deleteForm.action = `/users/${userId}`;
         const deleteModal = document.getElementById('deleteModal');
         deleteModal.classList.remove('hidden');
     }
 
-    function closeModal() {
-        const deleteModal = document.getElementById('deleteModal');
-        deleteModal.classList.add('hidden');
-    }
-    function showUser() {
-        <!-- {{--    fetch(`/users/${id}`)--}}
-        {{--    .then(response => response.json())--}}
-        {{--    .then(user => {--}} -->
-        document.getElementById('modalUserId').textContent = "id";
-        document.getElementById('modalUserNumcompte').textContent = "numcompte";
-        document.getElementById('modalUserNom').textContent = "nom";
-        document.getElementById('modalUserPrenom').textContent = "prenom";
-        document.getElementById('modalUserUsername').textContent = "username";
-        document.getElementById('modalUserEmail').textContent = "email";
-        document.getElementById('modalUserNumero').textContent = "numero";
-        document.getElementById('userModal').classList.remove('hidden');
-        <!-- }); -->
+    // function showUser(userId) {
+    //     fetch(`/users/${userId}`)
+    //         .then(response => response.json())
+    //         .then(user => {
+    //             const userDetails = `
+    //             <p><strong>Id:</strong> ${user.id}</p>
+    //             <p><strong>Status:</strong> ${user.session > 0 ? 'Online' : 'Offline'}</p>
+    //             <p><strong>Numéro de compte:</strong> ${user.numCompte}</p>
+    //             <p><strong>Nom:</strong> ${user.nom}</p>
+    //             <p><strong>Prénom:</strong> ${user.prenom}</p>
+    //             <p><strong>Nom d'utilisateur:</strong> ${user.username}</p>
+    //             <p><strong>Email:</strong> ${user.email}</p>
+    //             <p><strong>Telephone:</strong> ${user.numero}</p>
+    //         `;
+    //             document.getElementById('userDetails').innerHTML = userDetails;
+    //             document.getElementById('moreModal').classList.remove('hidden');
+    //         })
+    //         .catch(error => console.error('Error fetching user details:', error));
+    // }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).classList.add('hidden');
     }
 
-    function showcloseModal() {
-        document.getElementById('userModal').classList.add('hidden');
-    }
+
+
 </script>
 
 </body>

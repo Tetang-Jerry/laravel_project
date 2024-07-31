@@ -84,7 +84,7 @@
                                     <td class="py-3 px-6">{{ $user->numero}}</td>
                                     <td class="py-3 px-6">
                                         <div class="flex gap-1">
-                                            <a href="#" onclick="showUser({{$user->id}})" class="px-5 py-1 text-white bg-green-500">More</a>
+                                            <button onclick="showUser({{ $user->id }})" class="px-5 py-1 text-white bg-green-500">More</button>
                                             <button onclick="confirmDelete({{ $user->id }})" class="px-5 py-1 text-white bg-red-500">Delete</button>
                                         </div>
                                     </td>
@@ -110,23 +110,18 @@
                         </div>
 
                         <div id="userModal" class="fixed inset-0 flex items-center justify-center hidden bg-black bg-opacity-50">
-    <div class="bg-white p-5 rounded relative shadow-lg">
-        <button onclick="closeModal()" onblur="closeModal()" class="mt-4 absolute top-2 right-2 px-4 py-2 bg-red-500 text-white rounded">Close</button>
-
-        <h2 class="text-xl my-3">User Information</h2>
-        <p><strong>Id:</strong> <span id="modalUserId"></span></p>
-        <p><strong>Numéro de compte:</strong> <span id="modalUserNumcompte"></span></p>
-        <p><strong>Nom:</strong> <span id="modalUserNom"></span></p>
-        <p><strong>Prénom:</strong> <span id="modalUserPrenom"></span></p>
-        <p><strong>Nom d'utilisateur:</strong> <span id="modalUserUsername"></span></p>
-        <p><strong>Email:</strong> <span id="modalUserEmail"></span></p>
-        <p><strong>Telephone:</strong> <span id="modalUserNumero"></span></p>
-        <div class="flex justify-center">
-            <button onclick="" class="mt-4 px-4 py-2 bg-green-500 text-white rounded">view transaction</button>
-        </div>
-
-
-    </div>
+                            <!-- Modal for More Information -->
+                            <div id="moreModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+                                <div class="bg-white p-6 rounded-lg shadow-lg">
+                                    <h2 class="text-xl font-semibold mb-4">Détails de l'utilisateur</h2>
+                                    <div id="userDetails" class="mb-4">
+                                        <!-- User details will be inserted here -->
+                                    </div>
+                                    <div class="flex justify-end gap-2">
+                                        <button onclick="closeModal('moreModal')" class="px-4 py-2 bg-gray-500 text-white rounded">Fermer</button>
+                                    </div>
+                                </div>
+                            </div>
 </div>
 </div>
 
