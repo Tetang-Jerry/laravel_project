@@ -22,9 +22,9 @@
 
         <!--menu-items -->
         <div class="hidden md:flex space-x-[20px]">
-            <a href="{{ route('adminView') }}" class="hover:text-customBlue text-[16px] font-bold text-emerald-800">Home</a>
-            <a href="{{ route('accounts.index') }}" class="hover:text-customBlue text-[16px]">Accounts</a>
-            <a href="#" class="hover:text-customBlue text-[16px]">Transactions</a>
+            <a href="#" class="hover:text-customBlue text-[16px]">Home</a>
+            <a href="#" class="hover:text-customBlue text-[16px]">Dashboard</a>
+            <a href="#" class="hover:text-customBlue text-[16px]">Services</a>
             <a href="#" class="hover:text-customBlue text-[16px]">History</a>
             <a href="#" class="hover:text-customBlue text-[16px]">Help</a>
         </div>
@@ -46,7 +46,7 @@
                 <div class="absolute hidden -right-9 top-10 group-hover:block first-letter: z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                     <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
                         <div>Account number</div>
-                        <div class="font-medium truncate"></div>
+                        <div class="font-medium truncate">admin 1</div>
                     </div>
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
                         <li>
@@ -60,7 +60,9 @@
 
             </div>
         </div>
+
     </div>
+
 </header>
 
 
@@ -92,21 +94,59 @@
 
 
 
-
-<script >
-    @yield('script')
-</script>
-<script>
-        @if(session('success'))
-            Swal.fire({
-                title: 'Success!',
-                text: "{{ session('success') }}",
-                icon: 'success',
-                confirmButtonText: 'OK'
-            });
-        @endif
-</script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script >
+    {{--    search bar--}}
+    function searchTable() {
+        let input = document.getElementById('default-search').value.toLowerCase();
+        let rows = document.getElementById('userTable').getElementsByTagName('tr');
+
+        for (let i = 0; i < rows.length; i++) {
+            let cells = rows[i].getElementsByTagName('td');
+            let match = false;
+            for (let j = 0; j < cells.length; j++) {
+                if (cells[j].innerText.toLowerCase().includes(input)) {
+                    match = true;
+                    break;
+                }
+            }
+            if (match) {
+                rows[i].style.display = '';
+            } else {
+                rows[i].style.display = 'none';
+            }
+        }
+    }
+    function confirmDelete() {
+        const deleteForm = document.getElementById('deleteForm');
+        deleteForm.action = `{{ route('users.destroy', $user->id) }}`;
+        const deleteModal = document.getElementById('deleteModal');
+        deleteModal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+        const deleteModal = document.getElementById('deleteModal');
+        deleteModal.classList.add('hidden');
+    }
+    function showUser() {
+        <!-- {{--    fetch(`/users/${id}`)--}}
+        {{--    .then(response => response.json())--}}
+        {{--    .then(user => {--}} -->
+        document.getElementById('modalUserId').textContent = "id";
+        document.getElementById('modalUserNumcompte').textContent = "numcompte";
+        document.getElementById('modalUserNom').textContent = "nom";
+        document.getElementById('modalUserPrenom').textContent = "prenom";
+        document.getElementById('modalUserUsername').textContent = "username";
+        document.getElementById('modalUserEmail').textContent = "email";
+        document.getElementById('modalUserNumero').textContent = "numero";
+        document.getElementById('userModal').classList.remove('hidden');
+        <!-- }); -->
+    }
+
+    function showcloseModal() {
+        document.getElementById('userModal').classList.add('hidden');
+    }
+</script>
+
 </body>
 </html>
