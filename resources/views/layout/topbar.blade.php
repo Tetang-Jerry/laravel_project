@@ -97,7 +97,7 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script >
     function searchTable() {
-        let input = document.getElementById('searchbar').value.toLowerCase();
+        let input = document.getElementById('default-search').value.toLowerCase();
         let rows = document.getElementById('userTable').getElementsByTagName('tr');
 
         for (let i = 0; i < rows.length; i++) {
