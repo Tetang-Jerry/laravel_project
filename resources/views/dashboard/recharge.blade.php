@@ -7,7 +7,7 @@
         <div class="flex flex-col w-full justify-center items-center" id="block1">
             <div class="flex justify-between w-[90%] mb-7">
                 <h2 class="text-gray-400 font-bold uppercase text-xl">recharge</h2>
-                <h3 class="font-bold uppercase">moyens de paiement</h3>
+                <h3 class="font-bold uppercase">moyens de recharge</h3>
             </div>
 
             <div class="grid grid-cols-2 md:grid md:grid-cols-3 gap-5">
@@ -60,20 +60,20 @@
                 <form action="" method="post">
                     <div class="m-3">
                         <label for="telephone" class="font-bold text-primary">Telephone</label>
-                        <input type="text" name="telephone" id="telephone" class="w-[90%] bg-white border h-10 rounded-md shadow-2xl">
+                        <input type="text" name="telephone" id="telephone" class="w-[90%] px-3 bg-white border h-10 rounded-md shadow-2xl">
                     </div>
 
                     <div class="m-3">
                         <label for="montant" class="font-bold text-primary">Montant</label>
-                        <input type="number" name="Montant" id="Montant" class="w-[90%] bg-white border h-10 rounded-md shadow-2xl">
+                        <input type="number" name="montant" id="Montant" class="w-[90%] px-3 bg-white border h-10 rounded-md shadow-2xl">
                     </div>
 
                     <div class="m-3">
                         <label for="montant" class="font-bold text-primary">code secret</label>
-                        <input type="password" name="code" id="code" class="w-[90%] bg-white border h-10 rounded-md shadow-2xl">
+                        <input type="password" name="code" id="code" class="w-[90%] px-3 bg-white border h-10 rounded-md shadow-2xl">
                     </div>
-                  
-                    <input type="submit" value="valider" class="py-3 px-5 m-3 text-white bg-primary border-0 rounded-md shadow-lg max-w-24 text-center">
+
+                    <input type="submit" value="valider" class="cursor-pointer py-3 px-5 m-3 text-white bg-primary border-0 rounded-md shadow-lg max-w-24 text-center">
                 </form>
             </div>
         </div>
