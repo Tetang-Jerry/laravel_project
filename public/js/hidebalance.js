@@ -55,6 +55,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+// //////////////////////////////////////////////////////////////////
+
 document.addEventListener("DOMContentLoaded", () => {
     const profile = document.querySelector("#profil");
     const dropdown = document.querySelector(".dropdown");
@@ -94,3 +96,45 @@ close.addEventListener("click",()=>{
     Show.classList.remove("hidden");
     document.body.style.overflow = 'auto';
 })
+
+//////////////////////////////////////////////////////////////
+
+const suivantblock2 = document.getElementById("suivantblock2");
+const backblock1 = document.getElementById("backblock1");
+const block1 = document.getElementById("block1");
+const images = document.querySelectorAll("#image");
+const block2 = document.getElementById("block2");
+
+suivantblock2.addEventListener("click",()=>{
+      block2.style.left="0px";
+})
+
+backblock1.addEventListener("click",()=>{
+    block2.style.left="100%";
+})
+
+
+        // Variable pour stocker l'élément actuellement sélectionné
+        let currentlySelected = null;
+
+        // Ajouter un événement de clic à chaque élément sélectionné
+        images.forEach(element => {
+            element.addEventListener("click", () => {
+                // Si un élément est déjà sélectionné et c'est le même, désélectionnez-le
+                if (currentlySelected === element) {
+                    element.classList.remove("border-4");
+                    currentlySelected = null; // Réinitialiser la sélection
+                } else {
+                    // Désélectionner l'élément actuellement sélectionné s'il existe
+                    if (currentlySelected) {
+                        currentlySelected.classList.remove("border-4");
+                    }
+
+                    // Sélectionner le nouvel élément
+                    element.classList.add("border-4");
+
+                    // Mettre à jour l'élément actuellement sélectionné
+                    currentlySelected = element;
+                }
+            });
+        });
