@@ -22,14 +22,14 @@ class AdminRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "nom"=>['min:6','required'],
-            "prenom"=>['min:6','required'],
-            "password"=>['min:8','required','unique:admins,password'],
+            "nom"=>['required'],
+            "prenom"=>['required'],
+            "password"=>['required','unique:admins,password'],
             "email"=>['email','required','unique:admins,email'],
             "number"=>['required','digits','unique:admins,number']
 
             //
         ];
-    
+
     }
 }

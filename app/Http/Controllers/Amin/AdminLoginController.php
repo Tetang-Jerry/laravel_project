@@ -16,35 +16,26 @@ class AdminLoginController extends Controller
         return view('admin.login');
     }
 
-    // public function AuthAdmin(AdminRequest $Request){
-    //     $auth_view=$Request->only('email','password');
-    //     if(Auth::guard('admin_auth')->attempt($auth_view)){
-    //        return redirect()->intended('AT-admin/Dash-admin');
 
-    //     }else{
-    //         return redirect()->route('adminLogin')->with('error','email or password is incorrect');
-    //     }
-        
-    // }
-    public function AuthAdmin(AdminRequest $request)
+    public function AuthAdmin(Request $request)
     {
-        dd($request);
+
         $from_view = $request->only('email', 'password');
 
         if (Auth::guard('admin_auth')->attempt($from_view)) {
-            return redirect()->intended('AT-admin/Dash-admin');
+            return redirect()->intended('AT-admin/');
         }else {
-            return redirect()->route('adminLogin')->with('error', 'Email ou mot de passe incorrect');
+            return redirect()->route('AdminLogin')->with('error', 'Email ou mot de passe incorrect');
         }
     }
 
-    public function logoutUser()
+    public function logoutAdmin()
     {
         if (Auth::guard('admin_auth')->check()) {
             Auth::guard('admin_auth')->logout();
 
         }
-        return redirect()->route('adminLog');
+        return redirect()->route('AdminLogin');
     }
 
     public function AddAdmin(AdminRequest $admin){

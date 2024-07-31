@@ -49,8 +49,9 @@ Route::middleware('auth:sanctum')->get('/dashboard', function () {
 
     route::prefix('AT-admin')->group(function (){
         Route::get('/', [AdminController::class, 'adminView'])->name('adminView');
-        Route::get('/login', [loginController::class, 'loginView'])->name('loginView');
+        Route::get('/login', [AdminLoginController::class, 'AdminLogin'])->name('AdminLogin');
         Route::get('/allUser', [AdminController::class, 'all'])->name('allUser');
+        Route::get('/adminLogout', [AdminLoginController::class, 'logoutAdmin'])->name('logoutAdmin');
         Route::get('/showUser', [AdminController::class, 'show'])->name('usersShow');
         Route::get('/accounts', [AdminController::class, 'Accounts'])->name('Accounts');
         Route::get('/accounts', [AccountController::class, 'index'])->name('accounts.index');
