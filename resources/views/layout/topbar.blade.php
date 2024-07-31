@@ -96,7 +96,58 @@
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script >
+    {{--    search bar--}}
+    function searchTable() {
+        let input = document.getElementById('default-search').value.toLowerCase();
+        let rows = document.getElementById('userTable').getElementsByTagName('tr');
 
+        for (let i = 0; i < rows.length; i++) {
+            let cells = rows[i].getElementsByTagName('td');
+            let match = false;
+            for (let j = 0; j < cells.length; j++) {
+                if (cells[j].innerText.toLowerCase().includes(input)) {
+                    match = true;
+                    break;
+                }
+            }
+            if (match) {
+                rows[i].style.display = '';
+            } else {
+                rows[i].style.display = 'none';
+            }
+        }
+    }
+    function confirmDelete(userId) {
+        const deleteForm = document.getElementById('deleteForm');
+        deleteForm.action = `{{ route('users.destroy', $user->id) }}`;
+        const deleteModal = document.getElementById('deleteModal');
+        deleteModal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+        const deleteModal = document.getElementById('deleteModal');
+        deleteModal.classList.add('hidden');
+    }
+    function showUser(id) {
+        <!-- {{--    fetch(`/users/${id}`)--}}
+        {{--    .then(response => response.json())--}}
+        {{--    .then(user => {--}} -->
+        document.getElementById('modalUserId').textContent = "id";
+        document.getElementById('modalUserNumcompte').textContent = "numcompte";
+        document.getElementById('modalUserNom').textContent = "nom";
+        document.getElementById('modalUserPrenom').textContent = "prenom";
+        document.getElementById('modalUserUsername').textContent = "username";
+        document.getElementById('modalUserEmail').textContent = "email";
+        document.getElementById('modalUserNumero').textContent = "numero";
+        document.getElementById('userModal').classList.remove('hidden');
+        <!-- }); -->
+    }
+
+    function closeModal() {
+        document.getElementById('userModal').classList.add('hidden');
+    }
+</script>
 
 </body>
 </html>

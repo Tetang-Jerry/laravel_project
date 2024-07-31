@@ -35,7 +35,7 @@
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                                         </svg>
                                     </div>
-                                    <input type="search" id="default-search" name="search" class="block w-full p-4 ps-10 text-sm text-gray-900 border-none shadow-lg rounded-xl bg-gray-50 focus:ring-primary outline-none focus:border-none " placeholder="Search user" required />
+                                    <input type="search" id="default-search" onkeyup="searchTable()" name="search" class="block w-full p-4 ps-10 text-sm text-gray-900 border-none shadow-lg rounded-xl bg-gray-50 focus:ring-primary outline-none focus:border-none " placeholder="Search user" required />
                                     <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-primary   focus:bg-blue-600 font-medium rounded-lg text-sm px-4 py-2">Search</button>
                                 </div>
                                </form>
@@ -51,59 +51,65 @@
                     <hr />
                     <div class="overflow-x-auto">
 
-<table class="min-w-full bg-white rounded-lg shadow">
-                <thead>
-                    <tr class="w-full bg-gray-200 text-left text-gray-600 uppercase text-sm leading-normal">
-                    <th class="py-2 px-5">Id</th>
-                        <th class="py-2 px-5">Status</th>
-                    <th class="py-2 px-5">Numéro de compte</th>
-                    <th class="py-2 px-5">Nom</th>
-                    <th class="py-2 px-5">Prénom</th>
-                    <th class="py-2 px-5">Nom d'utilisateur</th>
-                    <th class="py-2 px-5">Email</th>
-                    <th class="py-2 px-5">Telephone</th>
-                    <th class="py-2 px-5">Option</th>
-                    </tr>
-                </thead>
-                <tbody class="text-gray-600 text-sm font-light">
-                 @foreach ($users as $user)
-                    <tr class="border-b border-gray-200 hover:bg-gray-100">
-                    <td class="py-3 px-6">{{ $user->id }}</td>
-                        <td class="py-3 px-6">
-                            @if($user->session >0)
-                                <span class="border-2 border-solid  border-green-500 text-white rounded-full w-2 px-2 bg-green-600 h-2">online</span>
-                            @else
-                                <span class="border-2 border-solid  border-red-500 text-white rounded-full w-2 px-2 bg-red-600 h-2">offline</span>
-                            @endif
-                        </td>
+                        <table class="min-w-full bg-white rounded-lg shadow">
+                            <thead>
+                            <tr class="w-full bg-gray-200 text-left text-gray-600 uppercase text-sm leading-normal">
+                                <th class="py-2 px-5">Id</th>
+                                <th class="py-2 px-5">Status</th>
+                                <th class="py-2 px-5">Numéro de compte</th>
+                                <th class="py-2 px-5">Nom</th>
+                                <th class="py-2 px-5">Prénom</th>
+                                <th class="py-2 px-5">Nom d'utilisateur</th>
+                                <th class="py-2 px-5">Email</th>
+                                <th class="py-2 px-5">Telephone</th>
+                                <th class="py-2 px-5">Option</th>
+                            </tr>
+                            </thead>
+                            <tbody id="userTable" class="text-gray-600 text-sm font-light">
+                            @foreach ($users as $user)
+                                <tr class="border-b border-gray-200 hover:bg-gray-100">
+                                    <td class="py-3 px-6">{{ $user->id }}</td>
+                                    <td class="py-3 px-6">
+                                        @if($user->session >0)
+                                            <span class="border-2 border-solid border-green-500 text-white rounded-full w-2 px-2 bg-green-600 h-2">online</span>
+                                        @else
+                                            <span class="border-2 border-solid border-red-500 text-white rounded-full w-2 px-2 bg-red-600 h-2">offline</span>
+                                        @endif
+                                    </td>
+                                    <td class="py-3 px-6">{{ $user->numCompte }}</td>
+                                    <td class="py-3 px-6">{{ $user->nom }}</td>
+                                    <td class="py-3 px-6">{{ $user->prenom }}</td>
+                                    <td class="py-3 px-6">{{ $user->username }}</td>
+                                    <td class="py-3 px-6">{{ $user->email }}</td>
+                                    <td class="py-3 px-6">{{ $user->numero}}</td>
+                                    <td class="py-3 px-6">
+                                        <div class="flex gap-1">
+                                            <a href="#" onclick="showUser({{$user->id}})" class="px-5 py-1 text-white bg-green-500">More</a>
+                                            <button onclick="confirmDelete({{ $user->id }})" class="px-5 py-1 text-white bg-red-500">Delete</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
 
+<!-- Modals -->
+                        <div id="deleteModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <h2 class="text-xl font-semibold mb-4">Confirmer la suppression</h2>
+                                <p class="mb-4">Êtes-vous sûr de vouloir supprimer cet utilisateur ? Cette action est irréversible.</p>
+                                <div class="flex justify-end gap-2">
+                                    <button onclick="closeModal()" class="px-4 py-2 bg-gray-500 text-white rounded">Annuler</button>
+                                    <form id="deleteForm" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded">Supprimer</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
 
-                <td class="py-3 px-6">{{ $user->numCompte }}</td>
-                <td class="py-3 px-6">{{ $user->nom }}</td>
-                <td class="py-3 px-6">{{ $user->prenom }}</td>
-                <td class="py-3 px-6">{{ $user->username }}</td>
-                <td class="py-3 px-6">{{ $user->email }}</td>
-                <td class="py-3 px-6">{{ $user->numero}}</td>
-                <td class="py-3 px-6">
-                    <div class="flex gap-1">
-                        <a href="#" onclick="showUser({{$user->id}})" class="px-5 py-1 text-white bg-green-500">More</a>
-                        <form action="{{ route('users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="px-5 py-1 text-white bg-red-500">Delete</button>
-                        </form>
-                    </div>
-                </td>
-                    </tr>
-                    @endforeach
-
-                </tbody>
-            </table>
-
-
-
-<!-- Modal -->
-<div id="userModal" class="fixed inset-0 flex items-center justify-center hidden bg-black bg-opacity-50">
+                        <div id="userModal" class="fixed inset-0 flex items-center justify-center hidden bg-black bg-opacity-50">
     <div class="bg-white p-5 rounded relative shadow-lg">
         <button onclick="closeModal()" onblur="closeModal()" class="mt-4 absolute top-2 right-2 px-4 py-2 bg-red-500 text-white rounded">Close</button>
 
@@ -133,22 +139,6 @@
 @section('script')
 
 
-    function showUser(id) {
-<!-- {{--    fetch(`/users/${id}`)--}}
-{{--    .then(response => response.json())--}}
-{{--    .then(user => {--}} -->
-    document.getElementById('modalUserId').textContent = "id";
-    document.getElementById('modalUserNumcompte').textContent = "numcompte";
-    document.getElementById('modalUserNom').textContent = "nom";
-    document.getElementById('modalUserPrenom').textContent = "prenom";
-    document.getElementById('modalUserUsername').textContent = "username";
-    document.getElementById('modalUserEmail').textContent = "email";
-    document.getElementById('modalUserNumero').textContent = "numero";
-    document.getElementById('userModal').classList.remove('hidden');
- <!-- }); -->
-    }
 
-    function closeModal() {
-    document.getElementById('userModal').classList.add('hidden');
-    }
+
 @endsection
