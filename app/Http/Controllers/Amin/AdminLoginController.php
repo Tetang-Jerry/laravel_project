@@ -23,6 +23,8 @@ class AdminLoginController extends Controller
         $from_view = $request->only('email', 'password');
 
         if (Auth::guard('admin_auth')->attempt($from_view)) {
+            $admin = Auth::guard('admin_auth')->user();
+            $admin->update(['session' => 1]);
             return redirect()->intended('AT-admin/');
         }else {
             return redirect()->route('AdminLogin')->with('error', 'Email ou mot de passe incorrect');
@@ -32,6 +34,8 @@ class AdminLoginController extends Controller
     public function logoutAdmin()
     {
         if (Auth::guard('admin_auth')->check()) {
+            $admin = Auth::guard('admin_auth')->user();
+            $admin->update(['session' => 0]);
             Auth::guard('admin_auth')->logout();
 
         }

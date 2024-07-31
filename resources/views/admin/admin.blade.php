@@ -100,7 +100,7 @@
                                 <p class="mb-4">Êtes-vous sûr de vouloir supprimer cet utilisateur ? Cette action est irréversible.</p>
                                 <div class="flex justify-end gap-2">
                                     <button onclick="closeModal()" class="px-4 py-2 bg-gray-500 text-white rounded">Annuler</button>
-                                    <form id="deleteForm" action="{{ route('users.destroy', $user->id) }}"  method="POST">
+                                    <form id="deleteForm" action=""  method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded">Supprimer</button>

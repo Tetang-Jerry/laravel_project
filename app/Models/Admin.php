@@ -14,7 +14,7 @@ class Admin extends Authenticatable
 
     protected $table = 'admins';
     protected $fillable = [
-        'nom', 'prenom', 'email',  'password', 'number'
+        'nom', 'prenom', 'email',  'password', 'number', 'session'
     ];
 }
 
