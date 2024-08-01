@@ -9,5 +9,16 @@ class Transactions extends Model
 {
     use HasFactory;
     protected $table= 'transactions';
-    protected $fillable=['users_id','type','montant','description','transaction_date'];
+    protected $fillable=[
+       'type_transaction','montant'
+    ];
+
+    public function user(){
+        return $this->belongsTo(Alpha_transit_user::class, 'users_id', 'id');
+    }
+
+    public function account()
+    {
+        return $this->belongsTo(Account::class, 'account_id', 'id');
+    }
 }

@@ -13,11 +13,17 @@ class Account extends Model
     // protected $table = 'nom_de_la_table';
 
     protected $fillable = [
-        'numcomp',
-        'nom',
-        'prenom',
-        'compte courant',
-        'compte epargne',
-        'date_ouverture',
+        'compte_courant',
+        'plan_epargne',
     ];
+
+    public function user()
+    {
+        return $this->hasMany(Alpha_transit_user::class, 'account_id', 'id');
+    }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transactions::class, 'account_id', 'id');
+    }
 }

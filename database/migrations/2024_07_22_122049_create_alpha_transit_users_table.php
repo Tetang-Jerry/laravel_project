@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('code');
             $table->string('token');
             $table->string('tokenVerify');
+            $table->foreignId('account_id')->constrained('accounts')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

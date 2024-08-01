@@ -12,12 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transactions', function (Blueprint $table) {
-            $table->id();
-            $table->string('user_id');
-            $table->string('type');
+            $table->bigIncrements('id');
+            $table->foreignId('user_id')->constrained('alpha_transit_users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('account_id')->constrained('accounts')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('type_transaction');
             $table->string('montant');
-            $table->string('description')->nullable();
-            $table->dateTime('transaction_date');
             $table->timestamps();
         });
     }

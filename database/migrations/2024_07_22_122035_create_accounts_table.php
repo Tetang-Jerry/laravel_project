@@ -12,13 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('accounts', function (Blueprint $table) {
-            $table->id();
-            $table->string('numcomp');
-            $table->string('nom');
-            $table->string('prenom');
-            $table->date('date_ouverture');
-            $table->decimal('compte courant');
-            $table->decimal('compte epargne');
+            $table->bigIncrements('id');
+            $table->string('numCompte');
+            $table->string('compte_courant', 15, 2)->default(0.00);
+            $table->string('plan_epargne');
             $table->timestamps();
         });
     }
